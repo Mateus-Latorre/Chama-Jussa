@@ -4,7 +4,7 @@ import { Alert } from "react-native";
 import api from "../Componentes/services/FakeAPIService"
 
 export const jussaContext = createContext()
-export const jussaProvider = ({ children }) => {
+export const JussaProvider = ({ children }) => {
     const [listagemChamadas, setListagemChamadas] = useState([]);
     const [chamadaValue, setChamadaValue] = useState("");
     const [editMode, setEditMode] = useState(false);

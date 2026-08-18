@@ -1,10 +1,32 @@
-import { Text } from "react-native"
-import { View } from "react-native"
-
+import { TouchableOpacity, View, Image, Text } from "react-native"
+import { FooterStyle } from "./FooterStyle"
 export const Footer = () => {
     return (
-        <View>
-            <Text></Text>
+        <View style={FooterStyle.cardMenu}>
+            <TouchableOpacity style={FooterStyle.card} >
+
+                <Image source={require('../../../assets/MinhasOS.png')}
+                    style={FooterStyle.cardButtonImage} />
+                <Image source={require('../../../assets/CriarOS.png')}
+                    style={FooterStyle.cardButtonImage}
+                />
+                <Image source={require('../../../assets/Notificacoes.png')}
+                    style={FooterStyle.cardButtonImage}
+                />
+                <Image source={require('../../../assets/Perfil.png')}
+                    style={FooterStyle.cardButtonImage}
+                />
+
+            </TouchableOpacity>
+            <View style={FooterStyle.card} >
+
+                <Text style={FooterStyle.texto}>Minhas OS</Text>
+                <Text style={FooterStyle.texto}>Criar OS</Text>
+                <Text style={FooterStyle.texto}>Notificações</Text>
+                <Text style={FooterStyle.texto}>Perfil</Text>
+
+
+            </View>
         </View>
     )
 }
