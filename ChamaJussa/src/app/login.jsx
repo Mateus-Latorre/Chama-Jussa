@@ -1,10 +1,7 @@
-
-import { StatusBar } from 'expo-status-bar';
-import { ScrollView, Text, View, Image } from 'react-native';
+import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { styles } from './StylesNotificacao';
+import { styles } from './StyleLogin';
 import { JussaProvider } from '../Context/jussaContext';
-import { Footer } from "../Componentes/footer/Footer"
 
 function App() {
     return (
@@ -12,14 +9,24 @@ function App() {
             <SafeAreaView style={styles.safeArea}>
                 <JussaProvider>
                     <View style={styles.container}>
-                      
 
+                        <Image source={require('../../assets/logo.png')} />
 
-                        <StatusBar style="auto" />
+                        <View style={styles.formulario}>
+                            <Text style={styles.titulo}>Chama Jussa</Text>
+                            <Text style={styles.texto}>Gerenciamento de Ordem de Serviço</Text>
+                            <View style={styles.inputs}>
+                                <Text style={styles.pedidoCaixa}>Email</Text>
+                                <TextInput style={styles.input} placeholder='Email@email.com'/>
+                                <Text style={styles.pedidoCaixa}>Senha</Text>
+                                <TextInput style={styles.input} placeholder='digite sua senha'/>
+                                <TouchableOpacity style={styles.botao}>
+                                    <Text style={styles.textobtn}>Acessar o Sistema</Text>
+                                </TouchableOpacity>
 
-
+                            </View>
+                        </View>
                     </View>
-                    <Footer />
 
                 </JussaProvider>
             </SafeAreaView>
