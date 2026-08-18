@@ -1,5 +1,5 @@
 CREATE DATABASE chamaJussadb;
-GO chamaJussadb;
+USE chamaJussadb;
 
 CREATE TABLE OrdemServico (
 	idServico VARCHAR(40) PRIMARY KEY,
@@ -14,8 +14,6 @@ CREATE TABLE OrdemServico (
 	CONSTRAINT fk_StatusOrdem FOREIGN KEY (idStatus) REFERENCES StatusOrdem(idStatus),
 	CONSTRAINT fk_Usuario FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 );
-
-SELECT * FROM OrdemServico;
 
 CREATE TABLE StatusOrdem (
 	idStatus VARCHAR(20) PRIMARY KEY,
@@ -34,5 +32,12 @@ CREATE TABLE Usuario(
 );
 
 SELECT * FROM Usuario;
-
+CREATE TABLE Notificacao (
+    idNotificacao INT IDENTITY(1,1) PRIMARY KEY,
+    idUsuario VARCHAR(40) NOT NULL,
+    mensagem VARCHAR(255) NOT NULL,
+    lida BIT DEFAULT 0,
+    dataCriacao DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+);
 DROP TABLE IF EXISTS OrdemServico;
