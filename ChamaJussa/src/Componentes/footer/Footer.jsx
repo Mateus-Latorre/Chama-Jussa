@@ -3,34 +3,34 @@ import { FooterStyle } from "./FooterStyle"
 export const Footer = () => {
     return (
         <View style={FooterStyle.cardMenu}>
-              <View style={FooterStyle.card} >
-            <TouchableOpacity >
+            <View style={FooterStyle.card} >
+                <TouchableOpacity >
 
-                <Image source={require('../../../assets/MinhasOS.png')}
-                    style={FooterStyle.cardButtonImage} />
-            </TouchableOpacity>
+                    <Image source={require('../../../assets/MinhasOS.png')}
+                        style={FooterStyle.cardButtonImage} />
+                </TouchableOpacity>
 
-            <TouchableOpacity  >
+                <TouchableOpacity  >
 
-                <Image source={require('../../../assets/CriarOS.png')}
-                    style={FooterStyle.cardButtonImage}
-                />
-            </TouchableOpacity>
+                    <Image source={require('../../../assets/CriarOS.png')}
+                        style={FooterStyle.cardButtonImage}
+                    />
+                </TouchableOpacity>
 
-            <TouchableOpacity >
+                <TouchableOpacity >
 
-                <Image source={require('../../../assets/Notificacoes.png')}
-                    style={FooterStyle.cardButtonImage}
-                />
-            </TouchableOpacity>
+                    <Image source={require('../../../assets/Notificacoes.png')}
+                        style={FooterStyle.cardButtonImage}
+                    />
+                </TouchableOpacity>
 
-            <TouchableOpacity  >
+                <TouchableOpacity  >
 
-                <Image source={require('../../../assets/Perfil.png')}
-                    style={FooterStyle.cardButtonImage}
-                />
+                    <Image source={require('../../../assets/Perfil.png')}
+                        style={FooterStyle.cardButtonImage}
+                    />
 
-            </TouchableOpacity>
+                </TouchableOpacity>
             </View>
             <View style={FooterStyle.card} >
 
