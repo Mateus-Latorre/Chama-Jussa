@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { jussaContext } from "../Context/jussaContext";
 
 
 export const styles = StyleSheet.create({
@@ -19,20 +20,78 @@ export const styles = StyleSheet.create({
 
     
     },
-    formulario: {
+    caixa: {
         backgroundColor: "#fff",
-        width: 350,
+        width: "80%",
         // height: 150,
         borderRadius: 10,
         boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
-        marginLeft: 15,
-        marginRight: 15,
-        marginBottom: 30,
-        justifyContent: "center",
-        alignItems: "center",
+        paddingLeft: 33,
+        paddingRight: 33,
+        marginBottom: 50,
+        // justifyContent: "center",
+        // alignItems: "center",
         padding: 15,
         flex: 1,
-        flexDirection: "row"
+        flexDirection: "column",
+        paddingTop: 55
 
+    },
+    titulo: {
+        textAlign: "center",
+        fontSize: 24,
+        fontWeight: 700,
+        paddingBottom: 30,
+
+    },
+    titulochamada: {
+        // textAlign: "center",
+        fontSize:16 ,
+        fontWeight: 700,
+        paddingBottom: 10,
+
+    },
+    botao: {
+        width: "100%",
+        backgroundColor: "#10b981",
+        height: 50,
+        borderRadius: 5,
+        boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
+        // flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 20,
+        marginBottom: 30
+
+
+    },
+    textobtn: {
+        color: "#fff",
+        fontSize: 18,
+        fontWeight: 700
+    },
+    input: {
+        backgroundColor:"#f3f4f6",
+        width: "100%",
+        height: 50,
+        borderRadius: 5,
+        borderColor: "#e0e1e3",
+        borderWidth: 1,
+        padding: 10,
+        marginTop: 8,
+        marginBottom: 10,
+
+
+        
+    },
+    texto: {
+        opacity: 0.5,
+        fontSize: 16,
+        textAlign: "center"
+
+    },
+    inputMaior: {
+        height: 115,
+        textAlignVertical: "top"
     }
 });
