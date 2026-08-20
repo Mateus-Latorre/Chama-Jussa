@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
 
     },
     texto: {
-        opacity: "50%",
+        opacity: 0.5,
         fontSize: 16,
         textAlign: "center"
 
@@ -76,10 +76,9 @@ export const styles = StyleSheet.create({
     botao: {
         width: "100%",
         backgroundColor: "#10b981",
-        height: 50,
+        height: 35,
         borderRadius: 5,
         boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
-        flex: 1,
         alignItems: "center",
         justifyContent: "center",
 
@@ -87,7 +86,11 @@ export const styles = StyleSheet.create({
     },
     textobtn: {
         color: "#fff",
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 700
+    },
+    azul: {
+      flexDirection: "row",
+        backgroundColor:"#234567"
     }
 });

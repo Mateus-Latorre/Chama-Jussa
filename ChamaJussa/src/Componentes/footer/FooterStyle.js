@@ -21,7 +21,7 @@ export const FooterStyle = StyleSheet.create({
         marginLeft: 20
     },
     texto: {
-        opacity: "50%",
+        opacity: 0.5,
         fontSize: 15,
         fontWeight: 500,
     }
