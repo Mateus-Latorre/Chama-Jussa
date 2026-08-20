@@ -1,12 +1,13 @@
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { JussaProvider } from "../Context/jussaContext";
-import { Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./StyleDetalhes";
 import { Image } from "react-native";
 import { Footer } from "../Componentes/footer/Footer";
 function App() {
   return (
     <SafeAreaProvider>
+        <ScrollView>
       <SafeAreaView style={styles.safeArea}>
         <JussaProvider>
           <View style={styles.container}>
@@ -49,6 +50,7 @@ function App() {
           </View>
         </JussaProvider>
       </SafeAreaView>
+        </ScrollView>
       <Footer />
     </SafeAreaProvider>
   );
