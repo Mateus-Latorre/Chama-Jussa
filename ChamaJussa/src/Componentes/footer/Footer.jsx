@@ -34,10 +34,10 @@ export const Footer = () => {
             </View>
             <View style={FooterStyle.card} >
 
-                <Text style={FooterStyle.texto}>Minhas OS</Text>
-                <Text style={FooterStyle.texto}>Criar OS</Text>
-                <Text style={FooterStyle.texto}>Notificações</Text>
-                <Text style={FooterStyle.texto}>Perfil</Text>
+                <Text style={FooterStyle.texto}>   Minhas OS</Text>
+                <Text style={FooterStyle.texto}> Criar OS</Text>
+                <Text style={FooterStyle.texto}>Notificações   </Text>
+                <Text style={FooterStyle.texto}>Perfil </Text>
 
 
             </View>
