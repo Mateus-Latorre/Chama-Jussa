@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
 
     },
     texto: {
-        opacity: "50%",
+        opacity: 0.8,
         fontSize: 16,
         textAlign: "center"
 

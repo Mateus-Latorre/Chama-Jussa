@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
         fontWeight: 700
     },
     Descricoe: {
-        opacity: "50%"
+        opacity: 0.5
     },
     Data: {
         flex: 1,
