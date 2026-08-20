@@ -58,6 +58,83 @@ function App() {
                                     </View>
                                 </View>
                             </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.caixa}>
+                                <Image source={require('../../assets/Alerta.png')} />
+                                <View style={styles.Textos}>
+                                    <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
+                                    <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
+                                    <View style={styles.Data}>
+                                        <Text style={styles.Descricoe}>22/06/2026</Text>
+                                        <Text style={styles.Descricoe}>16:03</Text>
+                                    </View>
+                                </View>
+                            </View>
 
 
                         </ScrollView>

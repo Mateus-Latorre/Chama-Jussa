@@ -18,10 +18,10 @@ export const FooterStyle = StyleSheet.create({
 
     },
     cardButtonImage: {
-        marginLeft: 20
+        marginLeft: 25
     },
     texto: {
-        opacity: "50%",
+        opacity: 0.5,
         fontSize: 15,
         fontWeight: 500,
     }
