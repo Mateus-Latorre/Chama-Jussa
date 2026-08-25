@@ -3,8 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, Text, View, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLista';
-import { JussaProvider } from '../../Context/jussaContext';
-import { Footer } from "../../Componentes/footer/Footer"
+import { JussaProvider } from '../../../Context/jussaContext';
 import React, { useState } from 'react';
 
 function App() {
@@ -92,7 +91,7 @@ function App() {
                         <StatusBar style="auto" />
 
                     </View>
-                    <Footer />
+                    {/* <Footer /> */}
 
                 </JussaProvider>
             </SafeAreaView>

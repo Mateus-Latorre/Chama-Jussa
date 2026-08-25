@@ -3,8 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, Text, View, Image } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StylesNotificacao';
-import { JussaProvider } from '../Context/jussaContext';
-import { Footer } from "../Componentes/footer/Footer"
+import { JussaProvider } from '../../../Context/jussaContext';
 
 function App() {
     return (
@@ -15,7 +14,7 @@ function App() {
                         <Text style={styles.titulo}>Notificações</Text>
                         <ScrollView style={styles.scroll}>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -26,7 +25,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -37,7 +36,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -48,7 +47,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -59,7 +58,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -70,7 +69,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -81,7 +80,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -92,7 +91,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -103,7 +102,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -114,7 +113,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -125,7 +124,7 @@ function App() {
                                 </View>
                             </View>
                             <View style={styles.caixa}>
-                                <Image source={require('../../assets/Alerta.png')} />
+                                <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>
                                     <Text style={styles.tituloChamada}>Ordem De Serviço Finalizada</Text>
                                     <Text style={styles.Descricoe}>Sua OS foi finalizada, logo ela voltará para sua sala.</Text>
@@ -142,7 +141,7 @@ function App() {
 
 
                     </View>
-                    <Footer />
+                    {/* <Footer /> */}
 
                 </JussaProvider>
             </SafeAreaView>

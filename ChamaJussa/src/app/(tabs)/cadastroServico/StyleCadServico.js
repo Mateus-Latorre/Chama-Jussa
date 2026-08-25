@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { jussaContext } from "../Context/jussaContext";
+import { jussaContext } from "../../../Context/jussaContext";
 
 
 export const styles = StyleSheet.create({
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     },
     caixa: {
         backgroundColor: "#fff",
-        width: "80%",
+        width: "85%",
         // height: 150,
         borderRadius: 10,
         boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     },
     titulochamada: {
         // textAlign: "center",
-        fontSize:16 ,
+        fontSize: 16 ,
         fontWeight: 700,
         paddingBottom: 10,
 
