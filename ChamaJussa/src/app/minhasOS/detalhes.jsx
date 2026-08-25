@@ -1,9 +1,9 @@
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { JussaProvider } from "../Context/jussaContext";
+import { JussaProvider } from "../../Context/jussaContext";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./StyleDetalhes";
 import { Image } from "react-native";
-import { Footer } from "../Componentes/footer/Footer";
+import { Footer } from "../../Componentes/footer/Footer";
 function App() {
   return (
     <SafeAreaProvider>
