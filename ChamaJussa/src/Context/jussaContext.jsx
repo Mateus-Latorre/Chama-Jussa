@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios"
 import { Alert } from "react-native";
-import api from "../Componentes/services/FakeAPIService"
+import api from "../../service"
 
 export const jussaContext = createContext()
 export const JussaProvider = ({ children }) => {

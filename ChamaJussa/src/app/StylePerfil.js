@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         alignItems: "center",
-        justifyContent: "flex-start",
         backgroundColor: "#F3F4F6",
         // borderColor: "transparent",
         // borderStyle: "solid",
