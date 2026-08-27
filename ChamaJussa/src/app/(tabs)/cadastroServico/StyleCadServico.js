@@ -30,13 +30,13 @@ export const styles = StyleSheet.create({
         boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
         paddingLeft: 30,
         paddingRight: 30,
-        // marginBottom: 50,
+        marginBottom: 30,
         // justifyContent: "center",
         // alignItems: "center",
         padding: 15,
         flex: 1,
         flexDirection: "column",
-        paddingTop: 55
+        paddingTop: 50
 
     },
     titulo: {
@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
         // textAlign: "center",
         fontSize: 16,
         fontWeight: 700,
-        paddingBottom: 12,
+        paddingBottom: 11,
 
     },
     botao: {
@@ -75,16 +75,14 @@ export const styles = StyleSheet.create({
     input: {
         backgroundColor: "#f3f4f6",
         width: "100%",
-        height: 50,
+        height: 40,
         borderRadius: 5,
         borderColor: "#e0e1e3",
         borderWidth: 1,
-        padding: 10,
-        marginTop: 8,
-        marginBottom: 10,
-
-
-
+        paddingTop: 10,
+        paddingLeft: 16,
+        // marginTop: 8,
+        marginBottom: 8,
     },
     texto: {
         opacity: 0.5,
@@ -93,7 +91,7 @@ export const styles = StyleSheet.create({
 
     },
     inputMaior: {
-        height: 115,
+        height: 100,
         textAlignVertical: "top"
     }
 });

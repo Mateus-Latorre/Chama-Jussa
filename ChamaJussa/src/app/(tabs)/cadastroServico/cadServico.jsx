@@ -1,6 +1,6 @@
 
 import { StatusBar } from 'expo-status-bar';
-import { TouchableOpacity, Text, View, TextInput, ScrollView } from 'react-native';
+import { TouchableOpacity, Text, View, TextInput } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleCadServico';
 import { JussaProvider } from '../../../Context/jussaContext';
@@ -12,7 +12,7 @@ function App() {
                 <JussaProvider>
                     <View style={styles.container}>
                         <Text style={styles.titulo}>Criar ordem de serviço</Text>
-                        <ScrollView style={styles.caixa}>
+                        <View style={styles.caixa}>
 
                             <Text style={styles.titulochamada}>Titulo do Problema * </Text>
                             <TextInput style={styles.input} placeholder='Ex: vazamento da pia' />
@@ -33,7 +33,7 @@ function App() {
                                 <Text style={styles.textobtn}>Criar ordem de Serviço</Text>
                             </TouchableOpacity>
 
-                        </ScrollView>
+                        </View>
                         <StatusBar style="auto" />
 
 
