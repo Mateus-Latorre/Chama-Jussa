@@ -3,8 +3,11 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     safeArea: {
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#F3F4F6",
         flex: 1,
+        height: "100%",
+        width: "100%",
+        paddingTop: 40
     },
     container: {
         width: "100%",
@@ -14,27 +17,34 @@ export const styles = StyleSheet.create({
         // borderColor: "transparent",
         // borderStyle: "solid",
         // borderWidth: 3,
+        paddingLeft: 30,
+        paddingRight: 30,
 
 
-    
+
     },
     formulario: {
-        width: 368,
+        backgroundColor: "#fff",
+        width: "99%",
         height: 347,
-        boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
         borderRadius: 10,
-        marginTop: 49,
-        justifyContent: "center",
+        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
+        // marginLeft: 15,
+        // marginRight: 15,
+        marginBottom: 30,
+        // justifyContent: "center",
         alignItems: "center",
+        padding: 15,
     },
     texto: {
-        flexDirection: "column",
-        justifyContent: "center",
         textAlign: "center",
-        fontWeight: "bold",
-        fontSize: 25,
+        fontSize: 24,
+        fontWeight: 700,
+        paddingBottom: 30,
+
     },
     textoNome: {
+        marginTop: 40,
         flexDirection: "column",
         fontWeight: "bold",
         fontSize: 25,
@@ -42,10 +52,11 @@ export const styles = StyleSheet.create({
     textoEmail: {
         flexDirection: "column",
         fontWeight: "light",
-        color: "#9B9B9B",
+        opacity: 0.5,
         marginTop: 10,
     },
     imagem: {
+        marginTop: 50,
         width: 150,
         height: 150,
         borderRadius: 100,
@@ -53,14 +64,16 @@ export const styles = StyleSheet.create({
         alignItems: "center",
     },
     btn: {
-        marginTop: 30,
+        marginTop: 40,
         height: 50,
-        width: 368,
+        width: "100%",
         borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor:"#EF4444",
+        backgroundColor: "#EF4444",
         boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
+        paddingLeft: 30,
+        paddingRight: 30,
     },
     txtbtn: {
         fontWeight: "bold",

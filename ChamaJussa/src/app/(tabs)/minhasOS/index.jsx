@@ -80,8 +80,8 @@ export default function App() {
                                 <View style={styles.Textos}>
                                     {/* <View style={styles.azul}> */}
 
-                                        <Text style={styles.tituloAzul}>OS - 001</Text>
-                                        {/* <TouchableOpacity>
+                                    <Text style={styles.tituloAzul}>OS - 001</Text>
+                                    {/* <TouchableOpacity>
                                             <Text>Aberta</Text>
                                         </TouchableOpacity>
                                     </View> */}
@@ -89,7 +89,7 @@ export default function App() {
 
                                     <Text style={styles.tituloSub}>Vazamento hidráulico no Bloco B</Text>
                                     <View style={styles.Data}>
-                                        <Text style={styles.Descricoe}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus error</Text>
+                                        <Text style={styles.Descricoe}>Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B...</Text>
 
                                     </View>
 

@@ -16,25 +16,27 @@ export const styles = StyleSheet.create({
         // borderColor: "transparent",
         // borderStyle: "solid",
         // borderWidth: 3,
+        paddingLeft: 30,
+        paddingRight: 30,
 
 
-    
+
     },
     caixa: {
         backgroundColor: "#fff",
-        width: "85%",
+        width: "99%",
         // height: 150,
         borderRadius: 10,
-        boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
-        paddingLeft: 33,
-        paddingRight: 33,
-        marginBottom: 50,
+        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
+        paddingLeft: 30,
+        paddingRight: 30,
+        marginBottom: 30,
         // justifyContent: "center",
         // alignItems: "center",
         padding: 15,
         flex: 1,
         flexDirection: "column",
-        paddingTop: 55
+        paddingTop: 50
 
     },
     titulo: {
@@ -46,9 +48,9 @@ export const styles = StyleSheet.create({
     },
     titulochamada: {
         // textAlign: "center",
-        fontSize: 16 ,
+        fontSize: 16,
         fontWeight: 700,
-        paddingBottom: 10,
+        paddingBottom: 11,
 
     },
     botao: {
@@ -71,18 +73,16 @@ export const styles = StyleSheet.create({
         fontWeight: 700
     },
     input: {
-        backgroundColor:"#f3f4f6",
+        backgroundColor: "#f3f4f6",
         width: "100%",
-        height: 50,
+        height: 40,
         borderRadius: 5,
         borderColor: "#e0e1e3",
         borderWidth: 1,
-        padding: 10,
-        marginTop: 8,
-        marginBottom: 10,
-
-
-        
+        paddingTop: 10,
+        paddingLeft: 16,
+        // marginTop: 8,
+        marginBottom: 8,
     },
     texto: {
         opacity: 0.5,
@@ -91,7 +91,7 @@ export const styles = StyleSheet.create({
 
     },
     inputMaior: {
-        height: 115,
+        height: 100,
         textAlignVertical: "top"
     }
 });

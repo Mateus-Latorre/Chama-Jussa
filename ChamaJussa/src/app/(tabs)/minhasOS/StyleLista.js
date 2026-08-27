@@ -44,8 +44,9 @@ export const styles = StyleSheet.create({
         color: "white"
     },
     container2: {
+        flexWrap: 'wrap',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         padding: 10,
         marginBottom: 15,
 
@@ -64,20 +65,19 @@ export const styles = StyleSheet.create({
     },
     titulo: {
         fontSize: 20,
-        opacity: 0.50,
+        // opacity: 0.50,
         fontWeight: 15,
     },
     caixa: {
         backgroundColor: "#fff",
         width: "100%",
-        height: 174,
         borderRadius: 10,
-        boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
-        marginBottom: 30,
+        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
         justifyContent: "center",
         // alignItems: "center",
         flexDirection: "row",
-        paddingTop: 23
+        paddingTop: 23,
+        paddingBottom: 18
 
     },
     scroll: {
@@ -97,7 +97,8 @@ export const styles = StyleSheet.create({
         fontWeight: 700
     },
     Descricoe: {
-        opacity: 0.5
+        opacity: 0.5,
+        fontSize: 16
     },
     Data: {
         flex: 1,
@@ -114,23 +115,31 @@ export const styles = StyleSheet.create({
 
     },
     botao: {
-        paddingVertical: 8,
+        marginLeft: 4,
+        marginBottom: 6,
+        justifyContent: "center",
+        alignItems: "center",
         paddingHorizontal: 12,
-        borderRadius: 20,
+        borderRadius: 10,
         backgroundColor: '#fff',
         borderColor: "#e0e1e3",
         borderWidth: 1,
+        height: 30
+
     },
     botaoAtivo: {
         backgroundColor: '#007AFF',
     },
     texto: {
-        color: '#000',
-        fontSize: 14,
+        opacity: 0.5,
+        fontSize: 15,
+        marginLeft: 10,
+        marginRight: 10,
     },
     textoAtivo: {
         color: '#fff',
-        fontWeight: 'bold',
+        opacity: 1,
+        // fontWeight: 'bold',
     },
     botaoOS: {
 

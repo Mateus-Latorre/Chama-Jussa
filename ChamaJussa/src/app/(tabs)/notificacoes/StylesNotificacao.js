@@ -15,6 +15,8 @@ export const styles = StyleSheet.create({
         // borderColor: "transparent",
         // borderStyle: "solid",
         // borderWidth: 3,
+        paddingLeft: 30,
+        paddingRight: 30,
 
 
     },
@@ -30,26 +32,27 @@ export const styles = StyleSheet.create({
         width: "99%",
         // height: 150,
         borderRadius: 10,
-        boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
+        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
         // marginLeft: 15,
         // marginRight: 15,
         marginBottom: 30,
         justifyContent: "center",
         alignItems: "center",
-        padding: 15,
+        padding: 14,
         flex: 1,
         flexDirection: "row"
 
     },
     scroll: {
-        flex: 1
-
+        flex: 1,
+        borderRadius: 10
     },
     tituloChamada: {
         fontSize: 18,
         fontWeight: 700
     },
     Descricoe: {
+        marginTop: 8,
         opacity: 0.5
     },
     Data: {
