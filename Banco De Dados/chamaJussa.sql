@@ -40,4 +40,3 @@ CREATE TABLE Notificacao (
     dataCriacao DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 );
-DROP TABLE IF EXISTS OrdemServico;
