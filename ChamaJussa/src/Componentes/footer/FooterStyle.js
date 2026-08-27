@@ -5,7 +5,7 @@ export const FooterStyle = StyleSheet.create({
         width: "100%",
         height: 100,
         paddingTop: 22,
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
 
     },
     card: {
