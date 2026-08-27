@@ -1,7 +1,7 @@
 import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLogin';
-import { JussaProvider } from '../Context/jussaContext';
+import { JussaProvider } from '../../Context/jussaContext';
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
                 <JussaProvider>
                     <View style={styles.container}>
 
-                        <Image source={require('../../assets/logo.png')} />
+                        <Image source={require('../../../assets/logo.png')} />
 
                         <View style={styles.formulario}>
                             <Text style={styles.titulo}>Chama Jussa</Text>
