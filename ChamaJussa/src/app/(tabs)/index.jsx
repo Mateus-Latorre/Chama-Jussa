@@ -23,6 +23,13 @@ function App() {
                                 <TouchableOpacity style={styles.botao}>
                                     <Text style={styles.textobtn}>Acessar o Sistema</Text>
                                 </TouchableOpacity>
+                                <Text>
+                                    Se você ainda não tem uma conta
+                                </Text>
+                                <Text>
+                                    Cadastre-se
+                                </Text>
+
 
                             </View>
                         </View>
