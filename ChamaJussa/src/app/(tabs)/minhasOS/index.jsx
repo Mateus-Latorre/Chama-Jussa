@@ -1,25 +1,34 @@
 
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, Text, View, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { ScrollView, Text, View, Image, TouchableOpacity, StyleSheet, Touchable } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLista';
 import { JussaProvider } from '../../../Context/jussaContext';
 import React, { useState } from 'react';
+import { useRouter } from 'expo-router';
 
-function App() {
+export default function App() {
     const [selecionado, setSelecionado] = useState('Todos');
+      const route = useRouter();
+      const paginaDetalhes = () => {
+        route.push("minhasOS/detalhes")
+      }
+      const paginaCadOS = () => {
+        route.push("cadastroServico/cadServico")
+      }
+
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
                 <JussaProvider>
-                    <View style={styles.container}>
+                    <View style={styles.container} >
                         <View style={styles.headerOS}>
                             <View style={styles.textoBox}>
                                 <Text style={styles.titulo}>Olá, Gato Nerd</Text>
                                 <Text style={styles.subsubtitulo}>Minhas OS's</Text>
                             </View>
                             <View style={styles.caixaOs}>
-                                <TouchableOpacity style={styles.btnOS}>
+                                <TouchableOpacity style={styles.btnOS} onPress={paginaCadOS}>
                                     <Text style={styles.txtBtn}>Nova OS
                                     </Text>
                                 </TouchableOpacity>
@@ -67,7 +76,7 @@ function App() {
                             </TouchableOpacity>
                         </View>
                         <ScrollView style={styles.scroll}>
-                            <View style={styles.caixa}>
+                            <TouchableOpacity style={styles.caixa} onPress={paginaDetalhes}>
                                 <View style={styles.Textos}>
                                     {/* <View style={styles.azul}> */}
 
@@ -85,7 +94,7 @@ function App() {
                                     </View>
 
                                 </View>
-                            </View>
+                            </TouchableOpacity>
 
                         </ScrollView>
                         <StatusBar style="auto" />
@@ -98,7 +107,3 @@ function App() {
         </SafeAreaProvider>
     );
 }
-
-
-
-export default App;

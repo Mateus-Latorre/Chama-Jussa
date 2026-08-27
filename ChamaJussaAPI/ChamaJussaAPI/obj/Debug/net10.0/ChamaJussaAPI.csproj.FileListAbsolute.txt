@@ -482,3 +482,4 @@ C:\Users\50055487858\Desktop\Chama-Jussa\ChamaJussaAPI\ChamaJussaAPI\bin\Debug\n
 C:\Users\50055487858\Desktop\Chama-Jussa\ChamaJussaAPI\ChamaJussaAPI\obj\Debug\net10.0\MvcTestingAppManifest.json
 C:\Users\50055487858\Desktop\Chama-Jussa\ChamaJussaAPI\ChamaJussaAPI\obj\Debug\net10.0\ChamaJussaAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\50055487858\Desktop\Chama-Jussa\ChamaJussaAPI\ChamaJussaAPI\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\50055487858\Desktop\Chama-Jussa\ChamaJussaAPI\ChamaJussaAPI\bin\Debug\net10.0\ChamaJussaAPI.staticwebassets.runtime.json

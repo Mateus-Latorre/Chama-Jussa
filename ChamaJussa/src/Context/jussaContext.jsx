@@ -12,7 +12,7 @@ export const JussaProvider = ({ children }) => {
 
     const getChamada = async () => {
         try {
-            const APIReturn = await api.get("/taskPoint")
+            const APIReturn = await api.get("/api/OrdemServico")
             const APIData = await APIReturn.data
 
             setListagemTarefas(APIData)

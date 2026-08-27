@@ -2,8 +2,13 @@ import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLogin';
 import { JussaProvider } from '../../Context/jussaContext';
+import { useRouter } from 'expo-router';
 
 function App() {
+        const route = useRouter();
+        const pagina = () => {
+            route.push("minhasOS/")
+        }
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
@@ -20,7 +25,7 @@ function App() {
                                 <TextInput style={styles.input} placeholder='Email@email.com'/>
                                 <Text style={styles.pedidoCaixa}>Senha</Text>
                                 <TextInput style={styles.input} placeholder='digite sua senha'/>
-                                <TouchableOpacity style={styles.botao}>
+                                <TouchableOpacity style={styles.botao} onPress={pagina}>
                                     <Text style={styles.textobtn}>Acessar o Sistema</Text>
                                 </TouchableOpacity>
                                 <Text>
@@ -44,3 +49,4 @@ function App() {
 
 
 export default App;
+    

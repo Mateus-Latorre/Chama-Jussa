@@ -3,15 +3,23 @@ import { JussaProvider } from "../../../Context/jussaContext";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./StyleDetalhes";
 import { Image } from "react-native";
+import { useRouter } from "expo-router";
 function App() {
+  const route = useRouter();
+  const paginaDetalhes = () => {
+    route.push("minhasOS/detalhes")
+  }
+  const paginaCadOS = () => {
+    route.push("/cadastroServico/cadServico")
+  }
   return (
     <SafeAreaProvider>
-      <ScrollView>
-        <SafeAreaView style={styles.safeArea}>
-          <JussaProvider>
-            <View style={styles.container}>
-              <Text style={styles.titulo}>Detalhes da OS - 1001</Text>
-              <View style={styles.formulario}>
+      <SafeAreaView style={styles.safeArea}>
+        <ScrollView >
+        <JussaProvider>
+          <View style={styles.container}  >
+            <Text style={styles.titulo}>Detalhes da OS - 1001</Text>
+            <View style={styles.formulario}>
                 <Text style={styles.txt}>Vazamento hidráulico</Text>
                 <Text style={styles.subtxt}>Criada em 17/06/2026, 11:29:58</Text>
                 <View style={styles.section}>
@@ -42,14 +50,14 @@ function App() {
                   <Text style={styles.txt}>Foto do Problema</Text>
                   <Image source={require("../../../../assets/Cadeira.png")} style={styles.dadosImg} />
                 </View>
-              </View>
-              <TouchableOpacity style={styles.btn}>
-                <Text style={styles.txtbtn}>Editar Solicitação</Text>
-              </TouchableOpacity>
             </View>
-          </JussaProvider>
-        </SafeAreaView>
-      </ScrollView>
+            <TouchableOpacity style={styles.btn} onPress={paginaCadOS}>
+                <Text style={styles.txtbtn}>Editar Solicitação</Text>
+            </TouchableOpacity>
+          </View>
+        </JussaProvider>
+        </ScrollView>
+      </SafeAreaView>
       {/* <Footer /> */}
     </SafeAreaProvider>
   );
