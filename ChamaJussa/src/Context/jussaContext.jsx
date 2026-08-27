@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios"
 import { Alert } from "react-native";
-import api from "../../service"
+import api from "../Componentes/services/service"
 
 export const jussaContext = createContext()
 export const JussaProvider = ({ children }) => {
@@ -12,7 +12,7 @@ export const JussaProvider = ({ children }) => {
 
     const getChamada = async () => {
         try {
-            const APIReturn = await api.get("/taskPoint")
+            const APIReturn = await api.get("/api/OrdemServico")
             const APIData = await APIReturn.data
 
             setListagemTarefas(APIData)
