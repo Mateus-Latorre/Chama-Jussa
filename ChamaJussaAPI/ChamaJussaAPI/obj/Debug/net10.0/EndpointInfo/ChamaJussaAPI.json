@@ -381,19 +381,44 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "type": "object",
+                "properties": {
+                  "IdUsuario": {
+                    "type": "string"
+                  },
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "Senha": {
+                    "type": "string"
+                  },
+                  "FotoPerfil": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "IdUsuario": {
+                  "style": "form"
+                },
+                "Nome": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Senha": {
+                  "style": "form"
+                },
+                "FotoPerfil": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -422,6 +447,36 @@
           "senha": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Notificacao": {
+        "type": "object",
+        "properties": {
+          "idNotificacao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "mensagem": {
+            "type": "string",
+            "nullable": true
+          },
+          "lida": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "dataCriacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUsuarioNavigation": {
+            "$ref": "#/components/schemas/Usuario"
           }
         },
         "additionalProperties": false
@@ -513,6 +568,13 @@
           },
           "senha": {
             "type": "string",
+            "nullable": true
+          },
+          "notificacaos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Notificacao"
+            },
             "nullable": true
           }
         },

@@ -19,7 +19,7 @@ export const JussaProvider = ({ children }) => {
 
         }
         catch (error) {
-            console.log("Deu ruim ai bixa");
+            console.log("Deu ruim ai");
             console.log(error)
         }
     }

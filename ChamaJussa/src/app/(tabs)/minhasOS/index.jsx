@@ -3,20 +3,20 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, Text, View, Image, TouchableOpacity, StyleSheet, Touchable } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLista';
-import { JussaProvider } from '../../../Context/jussaContext';
-import React, { useState } from 'react';
+import { jussaContext, JussaProvider } from '../../../Context/jussaContext';
+import React, { useContext, useState } from 'react';
 import { useRouter } from 'expo-router';
 
 export default function App() {
     const [selecionado, setSelecionado] = useState('Todos');
-      const route = useRouter();
-      const paginaDetalhes = () => {
+    const route = useRouter();
+    const paginaDetalhes = () => {
         route.push("minhasOS/detalhes")
-      }
-      const paginaCadOS = () => {
+    }
+    const paginaCadOS = () => {
         route.push("cadastroServico/cadServico")
-      }
-
+    }
+    const {listagemChamadas} = useContext(jussaContext)
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
@@ -76,26 +76,31 @@ export default function App() {
                             </TouchableOpacity>
                         </View>
                         <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}
-  showsHorizontalScrollIndicator={false}>
-                            <TouchableOpacity style={styles.caixa} onPress={paginaDetalhes}>
-                                <View style={styles.Textos}>
-                                    {/* <View style={styles.azul}> */}
+                            showsHorizontalScrollIndicator={false}>
+                            {listagemChamadas.map((chamada) => {
+                                return (
+                                    <TouchableOpacity style={styles.caixa} onPress={paginaDetalhes}>
+                                        <View style={styles.Textos}>
+                                            {/* <View style={styles.azul}> */}
 
-                                    <Text style={styles.tituloAzul}>OS - 001</Text>
-                                    {/* <TouchableOpacity>
+                                            <Text style={styles.tituloAzul}>OS - 001</Text>
+                                            {/* <TouchableOpacity>
                                             <Text>Aberta</Text>
                                         </TouchableOpacity>
                                     </View> */}
 
 
-                                    <Text style={styles.tituloSub}>Vazamento hidráulico no Bloco B</Text>
-                                    <View style={styles.Data}>
-                                        <Text style={styles.Descricoe}>Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B...</Text>
+                                            <Text style={styles.tituloSub}>Vazamento hidráulico no Bloco B</Text>
+                                            <View style={styles.Data}>
+                                                <Text style={styles.Descricoe}>Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B...</Text>
 
-                                    </View>
+                                            </View>
 
-                                </View>
-                            </TouchableOpacity>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+
 
                         </ScrollView>
                         <StatusBar style="auto" />

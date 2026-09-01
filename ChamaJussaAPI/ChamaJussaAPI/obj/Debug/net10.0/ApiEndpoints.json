@@ -231,9 +231,29 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "novoUsuario",
-        "Type": "ChamaJussaAPI.Models.Usuario",
-        "IsRequired": true
+        "Name": "IdUsuario",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Senha",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FotoPerfil",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
