@@ -20,7 +20,6 @@ export default function App() {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
-                <JussaProvider>
                     <View style={styles.container} >
                         <View style={styles.headerOS}>
                             <View style={styles.textoBox}>
@@ -102,7 +101,6 @@ export default function App() {
                     </View>
                     {/* <Footer /> */}
 
-                </JussaProvider>
             </SafeAreaView>
         </SafeAreaProvider>
     );

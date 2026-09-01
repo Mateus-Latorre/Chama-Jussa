@@ -42,7 +42,8 @@ export default function App() {
             setEmail("");
             setSenha("");
         } catch (error) {
-            Alert.alert('Erro de Login', 'Usuário não encontrado ou senha incorreta.');
+            console.log("ERRO REAL DA API:", error.response ? error.response.data : error.message);
+        Alert.alert('Erro', 'Olhe o terminal do Expo!');
         }
     };
 
