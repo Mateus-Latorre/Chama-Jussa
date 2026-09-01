@@ -6,7 +6,10 @@ import api from "../Componentes/services/service"
 export const jussaContext = createContext()
 export const JussaProvider = ({ children }) => {
     const [listagemChamadas, setListagemChamadas] = useState([]);
-    const [chamadaValue, setChamadaValue] = useState("");
+    const [descricao, setDescricao] = useState("");
+    const [tituloChamada, setTituloChamada] = useState("");
+    const [maquinaChamada, setMaquinaChamada] = useState("");
+    const [local, setLocal] = useState("");
     const [editMode, setEditMode] = useState(false);
     const [idToEdit, setIdToEdit] = useState(0);
 
@@ -24,12 +27,15 @@ export const JussaProvider = ({ children }) => {
         }
     }
 
-    const postTask = async (chamadaValue) => {
+    const postChamada = async (chamadaValue) => {
 
-        await api.post("/taskPoint", { descricao: chamadaValue })
+        await api.post("/ordemServico", { Descricao: descricao, Titulo: tituloChamada, Lugar: local, Equipamento: maquinaChamada })
+        
+        const [descricao, setDescricao] = useState("");
+        const [tituloChamada, setTituloChamada] = useState("");
+        const [maquinaChamada, setMaquinaChamada] = useState("");
+        const [local, setLocal] = useState("");
         await getChamada()
-        setChamadaValue("")
-
     }
 
     const putTaskPreview = async (chamada) => {
@@ -67,7 +73,7 @@ export const JussaProvider = ({ children }) => {
     }
 
     return (
-        <jussaContext.Provider value={{ listagemChamadas, setListagemChamadas, chamadaValue, setChamadaValue, editMode, setEditMode, idToEdit, setIdToEdit }}>
+        <jussaContext.Provider value={{ listagemChamadas, setListagemChamadas, descricao, setDescricao, local, setLocal, tituloChamada, maquinaChamada, setMaquinaChamada, setTituloChamada, editMode, setEditMode, idToEdit, setIdToEdit, postChamada }}>
             {children}
         </jussaContext.Provider >
     )
