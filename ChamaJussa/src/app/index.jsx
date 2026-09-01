@@ -1,15 +1,15 @@
 import { View, Image, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { styles } from './StyleLogin';
-import { JussaProvider } from '../../Context/jussaContext';
-import { UsuarioContext, UsuarioProvider } from '../../Context/usuarioContext';
+import { styles } from './(tabs)/StyleLogin';
+import { JussaProvider } from '../Context/jussaContext';
+import { UsuarioContext, UsuarioProvider } from '../Context/usuarioContext';
 import { useRouter } from 'expo-router';
 import { useContext, useState } from 'react';
 
 // Você precisará instalar: npx expo install @react-native-async-storage/async-storage
 import AsyncStorage from '@react-native-async-storage/async-storage'; 
 import { jwtDecode } from 'jwt-decode';
-import api from '../../Componentes/services/service'; // Ajuste o caminho da sua API
+import api from '../Componentes/services/service'; // Ajuste o caminho da sua API
 
 export default function App() {
     const route = useRouter();
