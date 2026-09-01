@@ -77,12 +77,15 @@ export const styles = StyleSheet.create({
         // alignItems: "center",
         flexDirection: "row",
         paddingTop: 23,
-        paddingBottom: 18
+        paddingBottom: 18,
+        paddingRight: 13,
+        paddingLeft: 13,
+        marginBottom: 27
 
     },
     scroll: {
         flex: 1,
-
+        borderRadius: 5
 
     },
     tituloAzul: {
@@ -107,7 +110,6 @@ export const styles = StyleSheet.create({
     },
     Textos: {
         width: "85%",
-        paddingLeft: 15
     },
     textoBox: {
         marginLeft: 20,

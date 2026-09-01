@@ -1,3 +1,4 @@
+
 import { View, Image, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './(tabs)/StyleLogin';
@@ -52,7 +53,7 @@ export default function App() {
             <SafeAreaView style={styles.safeArea}>
                         <View style={styles.container}>
 
-                            <Image source={require('../../../assets/logo.png')} />
+                            <Image source={require('../../assets/logo.png')} />
 
                             <View style={styles.formulario}>
                                 <Text style={styles.titulo}>Chama Jussa</Text>

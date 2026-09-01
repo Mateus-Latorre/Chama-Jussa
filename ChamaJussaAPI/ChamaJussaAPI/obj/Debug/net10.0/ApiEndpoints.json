@@ -49,16 +49,6 @@
   },
   {
     "ContainingType": "ChamaJussaAPI.Controllers.OrdemServicoController",
-    "Method": "Get",
-    "RelativePath": "api/OrdemServico",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ChamaJussaAPI.Controllers.OrdemServicoController",
     "Method": "Post",
     "RelativePath": "api/OrdemServico",
     "HttpMethod": "POST",
@@ -106,6 +96,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChamaJussaAPI.Controllers.OrdemServicoController",
+    "Method": "Get",
+    "RelativePath": "api/OrdemServico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

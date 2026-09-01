@@ -96,6 +96,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 30
   },
   txtbtn: {
     color: "#2563EB",

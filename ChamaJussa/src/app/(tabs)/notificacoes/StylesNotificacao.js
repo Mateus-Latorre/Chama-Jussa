@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 24,
         fontWeight: 700,
-        paddingBottom: 30,
+        paddingBottom: 50,
 
     },
     caixa: {

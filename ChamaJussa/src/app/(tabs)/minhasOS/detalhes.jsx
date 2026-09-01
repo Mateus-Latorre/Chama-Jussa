@@ -14,7 +14,8 @@ function App() {
   }
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.safeArea}>
+      <SafeAreaView style={styles.safeArea} showsVerticalScrollIndicator={false}
+  showsHorizontalScrollIndicator={false}>
         <ScrollView >
         <JussaProvider>
           <View style={styles.container}  >

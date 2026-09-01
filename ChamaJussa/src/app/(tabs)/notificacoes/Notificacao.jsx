@@ -12,7 +12,8 @@ function App() {
                 <JussaProvider>
                     <View style={styles.container}>
                         <Text style={styles.titulo}>Notificações</Text>
-                        <ScrollView style={styles.scroll}>
+                        <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}
+  showsHorizontalScrollIndicator={false}>
                             <View style={styles.caixa}>
                                 <Image source={require('../../../../assets/Alerta.png')} />
                                 <View style={styles.Textos}>

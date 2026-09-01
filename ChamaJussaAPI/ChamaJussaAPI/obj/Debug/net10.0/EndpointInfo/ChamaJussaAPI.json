@@ -87,6 +87,142 @@
         }
       }
     },
+    "/api/OrdemServico": {
+      "post": {
+        "tags": [
+          "OrdemServico"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Titulo": {
+                    "type": "string"
+                  },
+                  "Equipamento": {
+                    "type": "string"
+                  },
+                  "Lugar": {
+                    "type": "string"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "FotoUrl": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "DataCriacao": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "IdUsuario": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "IdStatus": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Titulo": {
+                  "style": "form"
+                },
+                "Equipamento": {
+                  "style": "form"
+                },
+                "Lugar": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "FotoUrl": {
+                  "style": "form"
+                },
+                "DataCriacao": {
+                  "style": "form"
+                },
+                "IdUsuario": {
+                  "style": "form"
+                },
+                "IdStatus": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "OrdemServico"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "OrdemServico"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrdemServico"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrdemServico"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrdemServico"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "OrdemServico"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/OrdemServico/{id}": {
       "get": {
         "tags": [
@@ -196,142 +332,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/OrdemServico": {
-      "get": {
-        "tags": [
-          "OrdemServico"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "OrdemServico"
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "Titulo": {
-                    "type": "string"
-                  },
-                  "Equipamento": {
-                    "type": "string"
-                  },
-                  "Lugar": {
-                    "type": "string"
-                  },
-                  "Descricao": {
-                    "type": "string"
-                  },
-                  "FotoUrl": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "DataCriacao": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "IdUsuario": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "IdStatus": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "encoding": {
-                "Titulo": {
-                  "style": "form"
-                },
-                "Equipamento": {
-                  "style": "form"
-                },
-                "Lugar": {
-                  "style": "form"
-                },
-                "Descricao": {
-                  "style": "form"
-                },
-                "FotoUrl": {
-                  "style": "form"
-                },
-                "DataCriacao": {
-                  "style": "form"
-                },
-                "IdUsuario": {
-                  "style": "form"
-                },
-                "IdStatus": {
-                  "style": "form"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "OrdemServico"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrdemServico"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrdemServico"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrdemServico"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "OrdemServico"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
