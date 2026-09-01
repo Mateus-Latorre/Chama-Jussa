@@ -81,6 +81,7 @@ export const styles = StyleSheet.create({
         boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
         alignItems: "center",
         justifyContent: "center",
+        marginTop: 21
 
 
     },

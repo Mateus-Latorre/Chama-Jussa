@@ -8,48 +8,30 @@ namespace ChamaJussaAPI.Repositories;
 public class UsuarioRepository : IUsuarioRepository
 {
     private readonly ChamaJussaContext _context;
+
     public UsuarioRepository(ChamaJussaContext context)
     {
         _context = context;
     }
+
     public Usuario BuscarPorEmaileSenha(string email, string senha)
     {
-        try
+        Usuario usuarioBuscado = _context.Usuarios.FirstOrDefault(u => u.Email == email)!;
+        if (usuarioBuscado != null)
         {
-            Usuario usuarioBuscado = _context.Usuarios.FirstOrDefault(u => u.Email == email)!;
-            if (usuarioBuscado != null)
+            bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+            if (confere)
             {
-                bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
-                if (confere)
-                {
-                    return usuarioBuscado;
-                }
+                return usuarioBuscado;
             }
-
-            return null!;
         }
-        catch (Exception)
-        {
 
-            throw;
-        }
+        return null!;
     }
 
     public Usuario BuscarPorId(Guid id)
     {
-        try
-        {
-            Usuario usuarioBuscado = _context.Usuarios.Find(id.ToString())!;
-            if (usuarioBuscado != null)
-            {
-                return usuarioBuscado;
-            }
-            return null!;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
+        return _context.Usuarios.Find(id.ToString())!;
     }
 
     public void Cadastrar(Usuario novoUsuario)
@@ -61,10 +43,12 @@ public class UsuarioRepository : IUsuarioRepository
             _context.Usuarios.Add(novoUsuario);
             _context.SaveChanges();
         }
-        catch (Exception)
+        catch (DbUpdateException ex)
         {
-            throw;
+            var realErrorMessage = ex.InnerException?.Message ?? ex.Message;
+            Console.WriteLine($"Database Error: {realErrorMessage}");
+
+            throw; // Relança a exceção para a Controller capturar a falha
         }
     }
-
 }

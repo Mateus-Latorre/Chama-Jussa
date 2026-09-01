@@ -1,80 +1,135 @@
 import { createContext, useState } from "react";
-import axios from "axios"
 import { Alert } from "react-native";
-import api from "../Componentes/services/service"
+import api from "../Componentes/services/service";
 
-export const jussaContext = createContext()
+export const jussaContext = createContext();
+
 export const JussaProvider = ({ children }) => {
     const [listagemChamadas, setListagemChamadas] = useState([]);
     const [descricao, setDescricao] = useState("");
     const [tituloChamada, setTituloChamada] = useState("");
     const [maquinaChamada, setMaquinaChamada] = useState("");
     const [local, setLocal] = useState("");
+    const [imagem, setImagem] = useState(null); // Adicionado para suportar a foto
     const [editMode, setEditMode] = useState(false);
-    const [idToEdit, setIdToEdit] = useState(0);
+    const [idToEdit, setIdToEdit] = useState(null);
 
+    // 1. LISTAR ORDENS DE SERVIÇO
     const getChamada = async () => {
         try {
-            const APIReturn = await api.get("/api/OrdemServico")
-            const APIData = await APIReturn.data
-
-            setListagemTarefas(APIData)
-
+            const resposta = await api.get("/OrdemServico");
+            setListagemChamadas(resposta.data);
+        } catch (error) {
+            console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
         }
-        catch (error) {
-            console.log("Deu ruim ai");
-            console.log(error)
-        }
-    }
+    };
 
-    const postChamada = async (chamadaValue) => {
-
-        await api.post("/ordemServico", { Descricao: descricao, Titulo: tituloChamada, Lugar: local, Equipamento: maquinaChamada })
-        
-        const [descricao, setDescricao] = useState("");
-        const [tituloChamada, setTituloChamada] = useState("");
-        const [maquinaChamada, setMaquinaChamada] = useState("");
-        const [local, setLocal] = useState("");
-        await getChamada()
-    }
-
-    const putTaskPreview = async (chamada) => {
-
-        setTaskValue(chamada.descricao)
-        setEditMode(true)
-        setIdToEdit(chamada.id)
-    }
-    const putTask = async (tarefa) => {
+    // 2. CRIAR ORDEM DE SERVIÇO
+    const postChamada = async () => {
         try {
-            await api.put(`/taskPoint/${idToEdit}`, { descricao: chamadaValue });
-            await getChamada()
-            setIdToEdit(0)
-            setEditMode(false)
-            setTaskValue("")
+            const formData = new FormData();
+
+            formData.append("Titulo", tituloChamada);
+            formData.append("Lugar", local); 
+            formData.append("Descricao", descricao);
+            formData.append("Equipamento", maquinaChamada || "");
+
+            // Anexa a imagem caso tenha sido selecionada pelo ImagePicker
+            if (imagem) {
+                formData.append("FotoUrl", {
+                    uri: imagem.uri || imagem,
+                    name: `os_${Date.now()}.jpg`,
+                    type: "image/jpeg",
+                });
+            }
+
+            await api.post("/OrdemServico", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+
+            Alert.alert("Sucesso", "Ordem de serviço cadastrada!");
+
+            // Limpa o formulário
+            setTituloChamada("");
+            setMaquinaChamada("");
+            setLocal("");
+            setDescricao("");
+            setImagem(null);
+
+            // Atualiza a lista
+            await getChamada();
 
         } catch (error) {
-            console.log("deu ruim viu bixo")
-            console.log(error)
+            console.log("Erro da API ao criar OS:", error.response?.data || error.message);
+            Alert.alert("Erro", "Não foi possível cadastrar a ordem de serviço.");
         }
-    }
+    };
 
-    const deleteTask = async (id) => {
-
+    // 3. ATUALIZAR ORDEM DE SERVIÇO
+    const putTask = async () => {
         try {
-            await api.delete(`/taskPoint/${id}`)
-            await getChamada()
+            const formData = new FormData();
+            formData.append("Titulo", tituloChamada);
+            formData.append("Lugar", local);
+            formData.append("Descricao", descricao);
+            formData.append("Equipamento", maquinaChamada || "");
 
-        }
-        catch (error) {
+            await api.put(`/OrdemServico/${idToEdit}`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
 
-            Alert.alert("deu ruim ai amigo(a)", `${error}`)
-            console.log(error)
+            await getChamada();
+            setIdToEdit(null);
+            setEditMode(false);
+            
+            setTituloChamada("");
+            setMaquinaChamada("");
+            setLocal("");
+            setDescricao("");
+        } catch (error) {
+            console.log("Erro ao atualizar OS:", error.response?.data || error.message);
         }
-    }
+    };
+
+    // 4. DELETAR ORDEM DE SERVIÇO
+    const deleteTask = async (id) => {
+        try {
+            await api.delete(`/OrdemServico?id=${id}`);
+            await getChamada();
+        } catch (error) {
+            Alert.alert("Erro", "Erro ao excluir ordem de serviço.");
+            console.log("Erro ao deletar:", error.response?.data || error.message);
+        }
+    };
 
     return (
-        <jussaContext.Provider value={{ listagemChamadas, setListagemChamadas, descricao, setDescricao, local, setLocal, tituloChamada, maquinaChamada, setMaquinaChamada, setTituloChamada, editMode, setEditMode, idToEdit, setIdToEdit, postChamada }}>
+        <jussaContext.Provider value={{ 
+            listagemChamadas, 
+            setListagemChamadas, 
+            descricao, 
+            setDescricao, 
+            local, 
+            setLocal, 
+            tituloChamada, 
+            setTituloChamada,
+            maquinaChamada, 
+            setMaquinaChamada, 
+            imagem,
+            setImagem,
+            editMode, 
+            setEditMode, 
+            idToEdit, 
+            setIdToEdit, 
+            getChamada,
+            postChamada,
+            putTask,
+            deleteTask
+        }}>
             {children}
-        </jussaContext.Provider >
-    )
-}
+        </jussaContext.Provider>
+    );
+};

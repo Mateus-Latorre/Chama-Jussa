@@ -3,9 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, Text, View, Image, TouchableOpacity, StyleSheet, Touchable } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLista';
-import { jussaContext, JussaProvider } from '../../../Context/jussaContext';
-import React, { useContext, useState } from 'react';
+import { jussaContext } from '../../../Context/jussaContext';
+import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'expo-router';
+import { UsuarioContext } from '../../../Context/usuarioContext';
 
 export default function App() {
     const [selecionado, setSelecionado] = useState('Todos');
@@ -16,14 +17,19 @@ export default function App() {
     const paginaCadOS = () => {
         route.push("cadastroServico/cadServico")
     }
-    const {listagemChamadas} = useContext(jussaContext)
+    const {listagemChamadas, getChamada} = useContext(jussaContext)
+      const {usuario} = useContext(UsuarioContext)
+      useEffect(()=> {
+        getChamada();
+      }, [])
+
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
                     <View style={styles.container} >
                         <View style={styles.headerOS}>
                             <View style={styles.textoBox}>
-                                <Text style={styles.titulo}>Olá, Gato Nerd</Text>
+                                <Text style={styles.titulo}>Olá, {usuario.nome}</Text>
                                 <Text style={styles.subsubtitulo}>Minhas OS's</Text>
                             </View>
                             <View style={styles.caixaOs}>
@@ -78,7 +84,7 @@ export default function App() {
                             showsHorizontalScrollIndicator={false}>
                             {listagemChamadas.map((chamada) => {
                                 return (
-                                    <TouchableOpacity style={styles.caixa} onPress={paginaDetalhes}>
+                                    <TouchableOpacity id={chamada.id} key={chamada.id} style={styles.caixa} onPress={paginaDetalhes}>
                                         <View style={styles.Textos}>
                                             {/* <View style={styles.azul}> */}
 
@@ -89,9 +95,9 @@ export default function App() {
                                     </View> */}
 
 
-                                            <Text style={styles.tituloSub}>Vazamento hidráulico no Bloco B</Text>
+                                            <Text style={styles.tituloSub}>{chamada.titulo}</Text>
                                             <View style={styles.Data}>
-                                                <Text style={styles.Descricoe}>Há um vazamento constante de água por baixo da pia do banheiro masculino do segundo andar do Bloco B...</Text>
+                                                <Text style={styles.Descricoe}>{chamada.descricao}</Text>
 
                                             </View>
 

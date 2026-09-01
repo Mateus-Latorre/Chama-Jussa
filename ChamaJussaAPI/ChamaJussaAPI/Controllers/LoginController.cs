@@ -32,12 +32,16 @@ public class LoginController : ControllerBase
             //1. Definir as informações(Claims) que serão fornecidas no token (payload)
             var claims = new[]
             {
-                    //forma da cliam
-                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario),
-                    new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
-                    //Existe a possibilidade de criar claims personalizada
-                    //EX: new Claim("ClaimPersonalizada", "Valor da claim personalizada")
-                };
+    // 1. Claim padrão do .NET para identificar o Usuário (Resolve o 401 na OrdemServicoController)
+    new Claim(ClaimTypes.NameIdentifier, usuarioBuscado.IdUsuario.ToString()),
+
+    // 2. ID Único do próprio Token (Boa prática JWT)
+    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+
+    new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
+    new Claim("nome", usuarioBuscado.Nome!),
+    new Claim("fotoPerfil", usuarioBuscado.FotoPerfil ?? "")
+};
 
             //2. Definir a chave de acesso ao token
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chamaJussa-chave-autenticacao-webapi-dev"));

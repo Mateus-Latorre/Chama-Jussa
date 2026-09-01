@@ -80,11 +80,12 @@ export const styles = StyleSheet.create({
         paddingBottom: 18,
         paddingRight: 13,
         paddingLeft: 13,
+        marginBottom: 27
 
     },
     scroll: {
         flex: 1,
-
+        borderRadius: 5
 
     },
     tituloAzul: {

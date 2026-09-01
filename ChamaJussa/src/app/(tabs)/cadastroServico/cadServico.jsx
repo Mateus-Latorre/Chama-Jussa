@@ -12,7 +12,6 @@ function App() {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
-                <JussaProvider>
                     <View style={styles.container}>
                         <Text style={styles.titulo}>Criar ordem de serviço</Text>
                         <View style={styles.caixa}>
@@ -42,8 +41,6 @@ function App() {
 
                     </View>
                     {/* <Footer /> */}
-
-                </JussaProvider>
             </SafeAreaView>
         </SafeAreaProvider>
     );

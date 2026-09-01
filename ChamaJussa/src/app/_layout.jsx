@@ -7,13 +7,15 @@ export default function Layout() {
     return (
         <UsuarioProvider>
             <JussaProvider>
-                <Stack>
-                    <Stack.Screen 
-                        name="(tabs)"
-                        options={{
-                            headerShown: false,
-                        }}
-                    />
+                <Stack initialRouteName="index" screenOptions={{ headerShown: false }}>
+                    {/* Rota inicial (Login) */}
+                    <Stack.Screen name="index" />
+                    
+                    {/* Rota caso seu login esteja em app/login.js */}
+                    <Stack.Screen name="login" />
+
+                    {/* Grupo de telas com abas (após o login) */}
+                    <Stack.Screen name="(tabs)" />
                 </Stack>
             </JussaProvider>
         </UsuarioProvider>
