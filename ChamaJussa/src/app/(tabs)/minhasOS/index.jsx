@@ -4,8 +4,9 @@ import { ScrollView, Text, View, Image, TouchableOpacity, StyleSheet, Touchable 
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleLista';
 import { JussaProvider } from '../../../Context/jussaContext';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useRouter } from 'expo-router';
+import { UsuarioContext } from '../../../Context/usuarioContext';
 
 export default function App() {
     const [selecionado, setSelecionado] = useState('Todos');
@@ -16,6 +17,7 @@ export default function App() {
       const paginaCadOS = () => {
         route.push("cadastroServico/cadServico")
       }
+      const {usuario} = useContext(UsuarioContext)
 
     return (
         <SafeAreaProvider>
@@ -23,7 +25,7 @@ export default function App() {
                     <View style={styles.container} >
                         <View style={styles.headerOS}>
                             <View style={styles.textoBox}>
-                                <Text style={styles.titulo}>Olá, Gato Nerd</Text>
+                                <Text style={styles.titulo}>Olá, {usuario.nome}</Text>
                                 <Text style={styles.subsubtitulo}>Minhas OS's</Text>
                             </View>
                             <View style={styles.caixaOs}>
