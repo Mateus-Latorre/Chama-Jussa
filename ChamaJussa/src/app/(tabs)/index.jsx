@@ -5,10 +5,10 @@ import { JussaProvider } from '../../Context/jussaContext';
 import { useRouter } from 'expo-router';
 
 function App() {
-        const route = useRouter();
-        const pagina = () => {
-            route.push("minhasOS/")
-        }
+    const route = useRouter();
+    const paginaCad = () => {
+        route.replace("/cadUsuario/cadUsuario")
+    }
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
@@ -25,13 +25,13 @@ function App() {
                                 <TextInput style={styles.input} placeholder='Email@email.com'/>
                                 <Text style={styles.pedidoCaixa}>Senha</Text>
                                 <TextInput style={styles.input} placeholder='digite sua senha'/>
-                                <TouchableOpacity style={styles.botao} onPress={pagina}>
+                                <TouchableOpacity style={styles.botao}>
                                     <Text style={styles.textobtn}>Acessar o Sistema</Text>
                                 </TouchableOpacity>
                                 <Text>
                                     Se você ainda não tem uma conta
                                 </Text>
-                                <Text>
+                                <Text onPress={paginaCad}>
                                     Cadastre-se
                                 </Text>
 
@@ -49,4 +49,3 @@ function App() {
 
 
 export default App;
-    

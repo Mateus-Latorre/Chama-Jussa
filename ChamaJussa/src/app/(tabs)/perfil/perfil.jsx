@@ -3,7 +3,6 @@ import { JussaProvider } from "../../../Context/jussaContext";
 import { Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./StylePerfil";
 import { Image } from "react-native";
-<<<<<<< HEAD
 import { useRouter } from "expo-router";
 function App(){
     const route = useRouter();
@@ -11,10 +10,6 @@ function App(){
         route.replace("/")
     }
     return(
-=======
-function App() {
-    return (
->>>>>>> d7b412b64a5a032aa16e47aef2d0adc7182409db
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
                 <JussaProvider>

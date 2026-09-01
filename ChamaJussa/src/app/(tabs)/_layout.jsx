@@ -3,13 +3,14 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function TabsLayout() {
     return (
+        <>
         <Tabs
             screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: "#007AFF",
                 tabBarInactiveTintColor: "#666",
                 tabBarStyle: {
-                    height: 100,
+                    height: 70,
                     paddingBottom: 8,
                     paddingTop: 6,
                     borderTopWidth: 3,
@@ -82,7 +83,18 @@ export default function TabsLayout() {
                     href: null,
                     tabBarStyle: { display: "none" }
                 }}
-            />
+                />                
+        <Tabs.Screen
+                name="cadUsuario/cadUsuario"
+                options={{
+                    href: null,
+                    tabBarStyle: { display: "none" }
+                }}
+                />
         </Tabs>
+
+       
+                
+     </>    
     );
 }

@@ -77,7 +77,9 @@ export const styles = StyleSheet.create({
         // alignItems: "center",
         flexDirection: "row",
         paddingTop: 23,
-        paddingBottom: 18
+        paddingBottom: 18,
+        paddingRight: 13,
+        paddingLeft: 13,
 
     },
     scroll: {
@@ -107,7 +109,6 @@ export const styles = StyleSheet.create({
     },
     Textos: {
         width: "85%",
-        paddingLeft: 15
     },
     textoBox: {
         marginLeft: 20,

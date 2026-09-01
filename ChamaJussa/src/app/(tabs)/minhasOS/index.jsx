@@ -75,7 +75,8 @@ export default function App() {
                                 <Text style={[styles.texto, selecionado === 'Concluídas' && styles.textoAtivo]}>Concluídas</Text>
                             </TouchableOpacity>
                         </View>
-                        <ScrollView style={styles.scroll}>
+                        <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}
+  showsHorizontalScrollIndicator={false}>
                             <TouchableOpacity style={styles.caixa} onPress={paginaDetalhes}>
                                 <View style={styles.Textos}>
                                     {/* <View style={styles.azul}> */}
