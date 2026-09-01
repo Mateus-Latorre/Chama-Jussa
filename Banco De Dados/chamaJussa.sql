@@ -40,3 +40,5 @@ CREATE TABLE Notificacao (
     dataCriacao DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 );
+ALTER TABLE Usuario
+ADD FotoPerfil VARCHAR(255) NULL;

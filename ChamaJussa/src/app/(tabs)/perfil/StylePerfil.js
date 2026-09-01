@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     container: {
         width: "100%",
         height: "100%",
-        alignItems: "center",
+        alignItems: "flex-start",
         backgroundColor: "#F3F4F6",
         // borderColor: "transparent",
         // borderStyle: "solid",
@@ -34,7 +34,8 @@ export const styles = StyleSheet.create({
         marginBottom: 30,
         // justifyContent: "center",
         alignItems: "center",
-        padding: 15,
+        padding: 14,
+        paddingBottom: 43,
     },
     texto: {
         textAlign: "center",

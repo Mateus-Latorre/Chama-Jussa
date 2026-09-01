@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChamaJussaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b2052c47eb473283371ba85207c0633a73c8763")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14ed3a9982eed6991284ee16b5aed263f347c040")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChamaJussaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChamaJussaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

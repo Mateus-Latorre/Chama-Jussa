@@ -114,8 +114,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Repositories\\UsuarioRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:01:34.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:01:34.094Z"
             },
             {
               "$type": "Document",
@@ -125,7 +124,7 @@
               "RelativeDocumentMoniker": "ChamaJussaAPI\\DTO\\UsuarioDTO.cs",
               "ToolTip": "C:\\Users\\50055487858\\Desktop\\Chama-Jussa\\ChamaJussaAPI\\ChamaJussaAPI\\DTO\\UsuarioDTO.cs",
               "RelativeToolTip": "ChamaJussaAPI\\DTO\\UsuarioDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-25T18:51:06.98Z",
               "EditorCaption": ""
@@ -140,8 +139,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Utils\\Criptografia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:09:49.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:09:49.5Z"
             },
             {
               "$type": "Document",
@@ -153,8 +151,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\DTO\\OrdemServicoDTOCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T17:53:52.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T17:53:52.279Z"
             },
             {
               "$type": "Document",
@@ -166,8 +163,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\DTO\\OrdemServicoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T17:48:28.23Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T17:48:28.23Z"
             },
             {
               "$type": "Document",
@@ -177,7 +173,7 @@
               "RelativeDocumentMoniker": "ChamaJussaAPI\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\50055487858\\Desktop\\Chama-Jussa\\ChamaJussaAPI\\ChamaJussaAPI\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "ChamaJussaAPI\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAwwCAAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwEMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-18T17:11:12.178Z",
               "EditorCaption": ""
@@ -192,8 +188,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:29:14.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:29:14.017Z"
             },
             {
               "$type": "Document",
@@ -205,8 +200,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Controllers\\NotificacaoController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAIwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:18:21.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:18:21.062Z"
             },
             {
               "$type": "Document",
@@ -254,8 +248,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Repositories\\OrdemServicoRepository.cs",
               "ViewState": "AgIAAGQAAAAAAAAAAADwv3kAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T14:07:59.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T14:07:59.373Z"
             },
             {
               "$type": "Document",
@@ -267,8 +260,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Controllers\\LoginController.cs",
               "ViewState": "AgIAABwAAAAAAAAAAIBZwCcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:12:00.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:12:00.038Z"
             },
             {
               "$type": "Document",
@@ -280,8 +272,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\DTO\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:10:34.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:10:34.668Z"
             },
             {
               "$type": "Document",
@@ -293,8 +284,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Controllers\\OrdemServicoController.cs",
               "ViewState": "AgIAAFoAAAAAAAAAAAAkwGMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T17:18:23.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T17:18:23.865Z"
             },
             {
               "$type": "Document",
@@ -306,8 +296,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Program.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAIBZwFQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T16:32:10.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T16:32:10.686Z"
             },
             {
               "$type": "Document",
@@ -319,8 +308,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Models\\OrdemServico.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAgwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T17:41:44.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-25T17:41:44.499Z"
             },
             {
               "$type": "Document",
@@ -332,8 +320,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Models\\ChamaJussaContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T13:48:15.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T13:48:15.222Z"
             },
             {
               "$type": "Document",
@@ -345,8 +332,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Interfaces\\IOrdemServicoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T13:57:14.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T13:57:14.036Z"
             },
             {
               "$type": "Document",
@@ -358,8 +344,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Repositories\\StatusOrdemRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T16:52:47.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T16:52:47.514Z"
             },
             {
               "$type": "Document",
@@ -371,8 +356,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Interfaces\\IStatusOrdemRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T16:51:36.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T16:51:36.949Z"
             },
             {
               "$type": "Document",
@@ -384,8 +368,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\ChamaJussaAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-08-18T13:54:09.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T13:54:09.753Z"
             },
             {
               "$type": "Document",
@@ -397,8 +380,7 @@
               "RelativeToolTip": "ChamaJussaAPI\\Controllers\\StatusOrdemController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T16:57:05.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-18T16:57:05.728Z"
             }
           ]
         }
