@@ -92,7 +92,7 @@
       },
       {
         "Name": "IdStatus",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -206,7 +206,7 @@
       },
       {
         "Name": "IdStatus",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

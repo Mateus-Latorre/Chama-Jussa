@@ -1,12 +1,15 @@
 import { createContext, useState } from "react";
 import { Alert } from "react-native";
 import api from "../Componentes/services/service";
+import { useRouter } from "expo-router";
 
 export const jussaContext = createContext();
 
 export const JussaProvider = ({ children }) => {
     const [listagemChamadas, setListagemChamadas] = useState([]);
+    const [chamadaUnica, setChamadaUnica] = useState([]);
     const [descricao, setDescricao] = useState("");
+    const [statusChamada, setStatusChamada] = useState("");
     const [tituloChamada, setTituloChamada] = useState("");
     const [maquinaChamada, setMaquinaChamada] = useState("");
     const [local, setLocal] = useState("");
@@ -14,6 +17,10 @@ export const JussaProvider = ({ children }) => {
     const [editMode, setEditMode] = useState(false);
     const [idToEdit, setIdToEdit] = useState(null);
 
+    const route = useRouter();
+      const paginaCadOS = () => {
+    route.push("/cadastroServico/cadServico")
+  }
     // 1. LISTAR ORDENS DE SERVIÇO
     const getChamada = async () => {
         try {
@@ -23,6 +30,15 @@ export const JussaProvider = ({ children }) => {
             console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
         }
     };
+const getIdChamada = async (id) => {
+    try {
+        const resposta = await api.get(`/OrdemServico/${id}`);
+        setChamadaUnica(resposta.data ? [resposta.data] : []);
+    } catch (error) {
+        console.log("Erro ao buscar chamada única:", error.response?.data || error.message);
+        setChamadaUnica([]); 
+    }
+};
 
     // 2. CRIAR ORDEM DE SERVIÇO
     const postChamada = async () => {
@@ -67,6 +83,18 @@ export const JussaProvider = ({ children }) => {
         }
     };
 
+    const editChamada = (chamada) => {
+        setTituloChamada(chamada.titulo);
+        setLocal(chamada.lugar);
+        setDescricao(chamada.descricao);
+        setStatusChamada(chamada.idStatus);
+        setImagem(chamada.fotoUrl);
+        setEditMode(true);
+        setIdToEdit(chamada.idServico);
+        setMaquinaChamada(chamada.equipamento);
+        paginaCadOS();
+    };
+
     // 3. ATUALIZAR ORDEM DE SERVIÇO
     const putTask = async () => {
         try {
@@ -75,6 +103,8 @@ export const JussaProvider = ({ children }) => {
             formData.append("Lugar", local);
             formData.append("Descricao", descricao);
             formData.append("Equipamento", maquinaChamada || "");
+            formData.append("IdStatus", statusChamada);
+            formData.append("FotoUrl", imagem);
 
             await api.put(`/OrdemServico/${idToEdit}`, formData, {
                 headers: {
@@ -90,6 +120,8 @@ export const JussaProvider = ({ children }) => {
             setMaquinaChamada("");
             setLocal("");
             setDescricao("");
+            setStatusChamada("");
+            setImagem(null);
         } catch (error) {
             console.log("Erro ao atualizar OS:", error.response?.data || error.message);
         }
@@ -127,7 +159,11 @@ export const JussaProvider = ({ children }) => {
             getChamada,
             postChamada,
             putTask,
-            deleteTask
+            deleteTask,
+            paginaCadOS,
+            editChamada,
+            getIdChamada,
+            chamadaUnica
         }}>
             {children}
         </jussaContext.Provider>

@@ -123,8 +123,7 @@
                     "format": "uuid"
                   },
                   "IdStatus": {
-                    "type": "string",
-                    "format": "uuid"
+                    "type": "string"
                   }
                 }
               },
@@ -307,8 +306,7 @@
             "name": "IdStatus",
             "in": "query",
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],

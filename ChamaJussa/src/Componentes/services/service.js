@@ -2,7 +2,7 @@ import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const apiPort = "5185";
-const apiUri = "172.16.2.67";
+const apiUri = "172.16.1.125";
 
 const localApi = `http://${apiUri}:${apiPort}/api`;
 
