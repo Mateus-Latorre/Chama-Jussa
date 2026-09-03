@@ -165,7 +165,7 @@ export const styles = StyleSheet.create({
 
     },
     Andamento: {
-        backgroundColor: '#8cce21',
+        backgroundColor: '#C3E58B',
         height: 27, 
         color: '#188d00',
         textAlign: "center",
@@ -177,7 +177,7 @@ export const styles = StyleSheet.create({
 
     },
     Finalizado: {
-        backgroundColor: '#ce5821',
+        backgroundColor: '#E5A88B',
         height: 27, 
         color: '#8d2d00',
         textAlign: "center",

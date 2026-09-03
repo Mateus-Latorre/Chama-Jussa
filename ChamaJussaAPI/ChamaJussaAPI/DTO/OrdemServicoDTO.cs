@@ -9,6 +9,6 @@
         public IFormFile? FotoUrl { get; set; }
         public DateTime? DataCriacao { get; set; }
         public Guid IdUsuario { get; set; }
-        public Guid IdStatus { get; set; }
+        public string IdStatus { get; set; }
     }
 }

@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
         paddingBottom: 11,
 
     },
-    botao: {
+    btn: {
         width: "100%",
         backgroundColor: "#10b981",
         height: 50,
@@ -93,5 +93,21 @@ export const styles = StyleSheet.create({
     inputMaior: {
         height: 100,
         textAlignVertical: "top"
+    },
+    botao: {
+        marginLeft: 4,
+        marginBottom: 6,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: 12,
+        borderRadius: 10,
+        backgroundColor: '#fff',
+        borderColor: "#e0e1e3",
+        borderWidth: 1,
+        height: 30
+
+    },
+    botaoAtivo: {
+        backgroundColor: '#007AFF',
     }
 });

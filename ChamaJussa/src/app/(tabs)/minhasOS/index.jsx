@@ -18,8 +18,8 @@ import { UsuarioContext } from "../../../Context/usuarioContext";
 export default function App() {
   const [selecionado, setSelecionado] = useState("Todos");
   const route = useRouter();
-  const paginaDetalhes = () => {
-    route.push("minhasOS/detalhes");
+  const paginaDetalhes = (idDaOS) => {
+    route.push({ pathname: "minhasOS/detalhes", params: { id: idDaOS } });
   };
   const paginaCadOS = () => {
     route.push("cadastroServico/cadServico");
@@ -147,20 +147,21 @@ export default function App() {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
           >
-            {chamadasFiltradas.map((chamada) => {
+            {chamadasFiltradas.map((chamada, index) => {
+              const numeroOS = String(index + 1).padStart(3, "0");
               return (
                 <TouchableOpacity
                   id={chamada.idServico}
                   key={chamada.idServico}
                   style={styles.caixa}
-                  onPress={paginaDetalhes}
+                  onPress={() => paginaDetalhes(chamada.idServico)}
                 >
                   <View style={styles.Textos}>
+
                     <View style={styles.status}>
-
-                      <Text style={styles.tituloAzul}>OS - 001</Text>
-
-                      <Text style={styles.status}>  {chamada.idStatus}</Text>
+                      <Text style={styles.tituloAzul}>OS - {numeroOS}</Text>
+                      
+                      <Text style={[chamada.idStatus == "Aberta" && styles.Aberta || chamada.idStatus == "Andamento" && styles.Andamento || chamada.idStatus == "Finalizado" && styles.Finalizado]}>{chamada.idStatus}</Text>
                     </View>
 
                     <Text style={styles.tituloSub}>{chamada.titulo}</Text>

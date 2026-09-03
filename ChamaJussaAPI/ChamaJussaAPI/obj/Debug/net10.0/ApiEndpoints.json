@@ -92,7 +92,11 @@
       },
       {
         "Name": "IdStatus",
+<<<<<<< HEAD
         "Type": "System.Guid",
+=======
+        "Type": "System.String",
+>>>>>>> 7d5a78627d1c91694c450ac6d0384de8c8e7d7d4
         "IsRequired": false
       }
     ],
@@ -206,7 +210,11 @@
       },
       {
         "Name": "IdStatus",
+<<<<<<< HEAD
         "Type": "System.Guid",
+=======
+        "Type": "System.String",
+>>>>>>> 7d5a78627d1c91694c450ac6d0384de8c8e7d7d4
         "IsRequired": false
       }
     ],
