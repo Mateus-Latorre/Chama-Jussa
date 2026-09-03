@@ -156,13 +156,12 @@ const chamadasFiltradas = listagemChamadas.filter((chamada) => {
                   onPress={paginaDetalhes}
                 >
                   <View style={styles.Textos}>
-                    {/* <View style={styles.azul}> */}
 
-                    <Text style={styles.tituloAzul}>OS - 001</Text>
-                    {/* <TouchableOpacity>
-                                            <Text>Aberta</Text>
-                                        </TouchableOpacity>
-                                    </View> */}
+                                        <View style={styles.status}>
+                                            <Text style={styles.tituloAzul}>OS - 001</Text>
+
+                                            <Text style={styles.textoStatus}>Aberta</Text>
+                                        </View>
 
                     <Text style={styles.tituloSub}>{chamada.titulo}</Text>
                     <View style={styles.Data}>
