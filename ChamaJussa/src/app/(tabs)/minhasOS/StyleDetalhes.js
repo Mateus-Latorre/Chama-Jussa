@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 25, // Substituído a altura fixa por padding inferior
     // Sombras compatíveis com iOS e Android
     shadowColor: "#000",
+        boxShadow: '1px 3px 5px rgba(0, 0, 0, 0.3)',
     borderRadius: 10,
     marginTop: 49,
     backgroundColor: "#fff",

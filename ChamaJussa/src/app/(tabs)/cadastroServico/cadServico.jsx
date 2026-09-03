@@ -53,7 +53,9 @@ function App() {
         <View style={styles.container}>
           <Text style={styles.titulo}>Criar ordem de serviço</Text>
           <View style={styles.caixa}>
-            <ScrollView>
+            <ScrollView
+                        showsVerticalScrollIndicator={false}
+                        showsHorizontalScrollIndicator={false}>
               <Text style={styles.titulochamada}>Titulo do Problema * </Text>
               <TextInput
                 style={styles.input}

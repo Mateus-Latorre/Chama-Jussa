@@ -14,6 +14,7 @@ CREATE TABLE OrdemServico (
 	CONSTRAINT fk_StatusOrdem FOREIGN KEY (idStatus) REFERENCES StatusOrdem(idStatus),
 	CONSTRAINT fk_Usuario FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 );
+DELETE FROM OrdemServico;
 select * from OrdemServico
 CREATE TABLE StatusOrdem (
 	idStatus VARCHAR(20) PRIMARY KEY,

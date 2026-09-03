@@ -67,6 +67,7 @@ export const JussaProvider = ({ children }) => {
             formData.append("Lugar", local); 
             formData.append("Descricao", descricao);
             formData.append("Equipamento", maquinaChamada || "");
+            formData.append("IdStatus", "Aberta");
 
             if (imagem) {
                 formData.append("FotoUrl", {

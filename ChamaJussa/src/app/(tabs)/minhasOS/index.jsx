@@ -18,7 +18,7 @@ import { UsuarioContext } from "../../../Context/usuarioContext";
 export default function App() {
   const [selecionado, setSelecionado] = useState("Todos");
   const route = useRouter();
-const paginaDetalhes = (idDaOS) => {
+  const paginaDetalhes = (idDaOS) => {
     route.push({ pathname: "minhasOS/detalhes", params: { id: idDaOS } });
   };
   const paginaCadOS = () => {
@@ -29,24 +29,24 @@ const paginaDetalhes = (idDaOS) => {
   useEffect(() => {
     getChamada();
   }, []);
-const chamadasFiltradas = listagemChamadas.filter((chamada) => {
-  // Captura o ID do usuário considerando a claim do ASP.NET
-  const idLogado = 
-    usuario?.idUsuario || 
-    usuario?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] || 
-    usuario?.jti;
+  const chamadasFiltradas = listagemChamadas.filter((chamada) => {
+    // Captura o ID do usuário considerando a claim do ASP.NET
+    const idLogado =
+      usuario?.idUsuario ||
+      usuario?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] ||
+      usuario?.jti;
 
-  // 1. Garante que só exibe as OSs criadas pelo usuário logado
-  const pertenceAoUsuario = 
-    String(chamada?.idUsuario).trim().toLowerCase() === String(idLogado).trim().toLowerCase();
+    // 1. Garante que só exibe as OSs criadas pelo usuário logado
+    const pertenceAoUsuario =
+      String(chamada?.idUsuario).trim().toLowerCase() === String(idLogado).trim().toLowerCase();
 
-  if (!pertenceAoUsuario) return false;
+    if (!pertenceAoUsuario) return false;
 
-  // 2. Filtro dos botões
-  if (selecionado === "Todos") return true;
+    // 2. Filtro dos botões
+    if (selecionado === "Todos") return true;
 
-  return (chamada?.idStatus || "").toString().trim().toLowerCase() === selecionado.toLowerCase();
-});
+    return (chamada?.idStatus || "").toString().trim().toLowerCase() === selecionado.toLowerCase();
+  });
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.safeArea}>
@@ -158,11 +158,11 @@ const chamadasFiltradas = listagemChamadas.filter((chamada) => {
                 >
                   <View style={styles.Textos}>
 
-                                        <View style={styles.status}>
-                                            <Text style={styles.tituloAzul}>OS - {numeroOS}</Text>
-
-                                            <Text style={styles.textoStatus}>{chamada.idStatus}</Text>
-                                        </View>
+                    <View style={styles.status}>
+                      <Text style={styles.tituloAzul}>OS - {numeroOS}</Text>
+                      
+                      <Text style={[chamada.idStatus == "Aberta" && styles.Aberta || chamada.idStatus == "Andamento" && styles.Andamento || chamada.idStatus == "Finalizado" && styles.Finalizado]}>{chamada.idStatus}</Text>
+                    </View>
 
                     <Text style={styles.tituloSub}>{chamada.titulo}</Text>
                     <View style={styles.Data}>

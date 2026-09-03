@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
         width: "99%",
         // height: 150,
         borderRadius: 10,
-        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
+        boxShadow: '1px 3px 5px rgba(0, 0, 0, 0.3)',
         // marginLeft: 15,
         // marginRight: 15,
         marginBottom: 30,
