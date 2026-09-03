@@ -7,7 +7,7 @@ import { jussaContext, JussaProvider } from '../../../Context/jussaContext';
 import { useContext } from 'react';
 
 function App() {
-    const { postChamada, descricao, setDescricao, local, setLocal, tituloChamada, maquinaChamada, setMaquinaChamada, setTituloChamada } = useContext(jussaContext)
+    const { postChamada, descricao, setDescricao, local, setLocal, tituloChamada, maquinaChamada, setMaquinaChamada, setTituloChamada, putChamada, editMode, setEditMode} = useContext(jussaContext)
 
     return (
         <SafeAreaProvider>
@@ -31,7 +31,8 @@ function App() {
                             <Text style={styles.titulochamada}>imagem / Foto do Problema * </Text>
                             <TextInput style={styles.input} placeholder='Ex: insira uma imagem' />
 
-                            <TouchableOpacity style={styles.botao} onPress={()=>{postChamada()}}>
+                            <TouchableOpacity style={styles.botao} onPress={()=>{ if(editMode) putChamada() 
+                                else postChamada()}}>
                                 <Text style={styles.textobtn}>Criar ordem de Serviço</Text>
                             </TouchableOpacity>
 

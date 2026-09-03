@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     },
     container: {
         width: "100%",
+        height: "100%",
         flex: 1,
         alignItems: "center",
         backgroundColor: "#F3F4F6",
@@ -21,8 +22,8 @@ export const styles = StyleSheet.create({
     },
     formulario: {
         backgroundColor: "#fff",
-        width: "75%",
-        height: "80%",
+        width: "85%",
+        maxHeight: 430,
         borderRadius: 10,
         boxShadow: '1px 4px 5px rgba(0, 0, 0, 0.5)',
         marginLeft: 15,

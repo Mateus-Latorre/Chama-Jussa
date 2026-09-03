@@ -6,6 +6,7 @@ export const jussaContext = createContext();
 
 export const JussaProvider = ({ children }) => {
     const [listagemChamadas, setListagemChamadas] = useState([]);
+    const [listagemNotificacao, setlistagemNotificacao] = useState([]);
     const [descricao, setDescricao] = useState("");
     const [tituloChamada, setTituloChamada] = useState("");
     const [maquinaChamada, setMaquinaChamada] = useState("");
@@ -19,6 +20,14 @@ export const JussaProvider = ({ children }) => {
         try {
             const resposta = await api.get("/OrdemServico");
             setListagemChamadas(resposta.data);
+        } catch (error) {
+            console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
+        }
+    };
+    const getNotificacao = async () => {
+        try {
+            const resposta = await api.get(`/Notificacao/${idUsuario}`);
+            setlistagemNotificacao(resposta.data);
         } catch (error) {
             console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
         }
@@ -68,7 +77,7 @@ export const JussaProvider = ({ children }) => {
     };
 
     // 3. ATUALIZAR ORDEM DE SERVIÇO
-    const putTask = async () => {
+    const putChamada = async () => {
         try {
             const formData = new FormData();
             formData.append("Titulo", tituloChamada);
@@ -125,9 +134,10 @@ export const JussaProvider = ({ children }) => {
             idToEdit, 
             setIdToEdit, 
             getChamada,
+            getNotificacao,
+            listagemNotificacao,
             postChamada,
-            putTask,
-            deleteTask
+            putChamada,
         }}>
             {children}
         </jussaContext.Provider>

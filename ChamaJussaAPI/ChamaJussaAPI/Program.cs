@@ -87,7 +87,7 @@ builder.Services.AddControllers()
     {
         // Ignora relacionamentos circulares ao serializar JSON
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-    });
+    }); 
 
 var app = builder.Build();
 

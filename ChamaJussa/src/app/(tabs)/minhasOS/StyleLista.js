@@ -70,6 +70,7 @@ export const styles = StyleSheet.create({
     },
     caixa: {
         backgroundColor: "#fff",
+        height: 174,
         width: "100%",
         borderRadius: 10,
         boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
@@ -92,6 +93,7 @@ export const styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         fontWeight: 700,
+        width: 150,
         color: "#006fff"
     },
     tituloSub: {
@@ -109,7 +111,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     Textos: {
-        width: "85%",
+        width: "90%",
     },
     textoBox: {
         marginLeft: 20,
@@ -143,7 +145,21 @@ export const styles = StyleSheet.create({
         opacity: 1,
         // fontWeight: 'bold',
     },
-    botaoOS: {
+    status: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: "100%"
+    },
+    status: {
+        backgroundColor: '#DCEAFF',
+        height: 27, 
+        color: '#2583F7',
+        textAlign: "center",
+        textAlignVertical: "center",
+        fontSize: 16,
+        fontWeight: '500',
+        paddingHorizontal: 12,
+        borderRadius: 10,
 
     }
 });
