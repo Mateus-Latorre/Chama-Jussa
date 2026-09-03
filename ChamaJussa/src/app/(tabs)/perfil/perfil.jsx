@@ -13,7 +13,7 @@ function App() {
   };
   const { usuario } = useContext(UsuarioContext);
   console.log("Payload do Usuário:", JSON.stringify(usuario, null, 2));
-  const baseUrl = "http://172.16.0.115:5185";
+  const baseUrl = "http://172.16.2.67:5185";
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.safeArea}>
