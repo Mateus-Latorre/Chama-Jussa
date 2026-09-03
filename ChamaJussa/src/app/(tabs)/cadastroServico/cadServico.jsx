@@ -11,6 +11,7 @@ import { styles } from "./StyleCadServico";
 import { jussaContext, JussaProvider } from "../../../Context/jussaContext";
 import { useContext, useState } from "react";
 import { useRouter } from "expo-router";
+import SelecionarFoto from "../../../Componentes/camera/SelecionarFoto";
 
 function App() {
   const {
@@ -146,10 +147,7 @@ function App() {
               <Text style={styles.titulochamada}>
                 imagem / Foto do Problema *{" "}
               </Text>
-              <TextInput
-                style={styles.input}
-                placeholder="Insira uma imagem"
-              />
+              <SelecionarFoto />
               {editMode && (
                 <TouchableOpacity
                   style={styles.btn}

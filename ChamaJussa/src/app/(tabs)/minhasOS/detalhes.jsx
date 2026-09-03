@@ -35,7 +35,7 @@ function App() {
   } = useContext(jussaContext);
   const { usuario } = useContext(UsuarioContext);
   const baseUrl = "http://172.16.1.125:5185";
-useEffect(() => {
+  useEffect(() => {
     if (id) {
       getIdChamada(id);
     }
@@ -50,9 +50,10 @@ useEffect(() => {
         <ScrollView>
           {chamadaUnica.map((chamada) => {
             return (
-              <View style={styles.container}
-              key = {chamada.idServico}
-              id={chamada.idServico}
+              <View
+                style={styles.container}
+                key={chamada.idServico}
+                id={chamada.idServico}
               >
                 <Text style={styles.titulo}>Detalhes da OS - 1001</Text>
                 <View style={styles.formulario}>
@@ -99,13 +100,25 @@ useEffect(() => {
                     <Text style={styles.txt}>Descrição do Problema</Text>
                     <Text style={styles.dadosTxt}>{chamada.descricao}</Text>
                     <Text style={styles.txt}>Foto do Problema</Text>
-                    <Image
-                      source={{ uri: `${baseUrl}${chamada.FotoUrl}` }}
-                      style={styles.dadosImg}
-                    />
+                    {chamada.fotoUrl ? (
+                      <Image
+                        source={{
+                          uri: `${baseUrl}/imagens/${chamada.fotoUrl}`,
+                        }}
+                        style={styles.dadosImg}
+                        resizeMode="cover"
+                      />
+                    ) : (
+                      <Text style={{ color: "#888", marginTop: 10 }}>
+                        Nenhuma foto anexada.
+                      </Text>
+                    )}
                   </View>
                 </View>
-                <TouchableOpacity style={styles.btn} onPress={() => editChamada(chamada)}>
+                <TouchableOpacity
+                  style={styles.btn}
+                  onPress={() => editChamada(chamada)}
+                >
                   <Text style={styles.txtbtn}>Editar Solicitação</Text>
                 </TouchableOpacity>
               </View>

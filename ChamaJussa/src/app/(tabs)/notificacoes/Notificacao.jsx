@@ -11,49 +11,60 @@ function App() {
     const { usuario } = useContext(UsuarioContext);
 
     useEffect(() => {
-        getNotificacao();
-    }, []);
-    const notificacoesFiltradas = listagemNotificacao.filter((notificacao) => {
+        // Extrai o ID do usuário logado
         const idLogado = 
             usuario?.idUsuario || 
             usuario?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] || 
             usuario?.jti;
-        return String(notificacao?.idUsuario).trim().toLowerCase() === String(idLogado).trim().toLowerCase();
-    });
+
+        // Dispara a busca enviando o ID para a rota /api/Notificacao/{idUsuario}
+        if (idLogado) {
+            getNotificacao(idLogado);
+        }
+    }, [usuario]);
 
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
                 <View style={styles.container}>
                     <Text style={styles.titulo}>Notificações</Text>
+
                     <ScrollView 
                         style={styles.scroll} 
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
                     >
-                        {
-                            notificacoesFiltradas.map((notificacao, index) => {
-                                const chave = notificacao.idNotificacao || index;
+                        {listagemNotificacao.length === 0 ? (
+                            <Text style={{ textAlign: 'center', marginTop: 20, color: '#888' }}>
+                                Nenhuma notificação encontrada.
+                            </Text>
+                        ) : (
+                            listagemNotificacao.map((notificacao, index) => {
+                                // Formatação da DataCriacao vinda do C#
+                                const dataObjeto = notificacao.dataCriacao ? new Date(notificacao.dataCriacao) : null;
+                                const dataFormatada = dataObjeto ? dataObjeto.toLocaleDateString("pt-BR") : "";
+                                const horaFormatada = dataObjeto ? dataObjeto.toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' }) : "";
 
                                 return (
-                                    <View style={styles.caixa} key={chave}>
+                                    <View style={styles.caixa} key={notificacao.idNotificacao || index}>
                                         <Image source={require('../../../../assets/Alerta.png')} />
                                         <View style={styles.Textos}>
-                                            <Text style={styles.tituloChamada}>
-                                                {notificacao.titulo || "Ordem De Serviço Finalizada"}
-                                            </Text>
+                                            <Text style={styles.tituloChamada}>Atualização de OS</Text>
+                                            
+                                            {/* 💡 Exibe a propriedade 'mensagem' gerada no seu C# */}
                                             <Text style={styles.Descricoe}>
-                                                {notificacao.descricao || "Sua OS foi finalizada, logo ela voltará para sua sala."}
+                                                {notificacao.mensagem || notificacao.Mensagem}
                                             </Text>
+
                                             <View style={styles.Data}>
-                                                <Text style={styles.Descricoe}>{notificacao.data || "22/06/2026"}</Text>
-                                                <Text style={styles.Descricoe}>{notificacao.hora || "16:03"}</Text>
+                                                <Text style={styles.Descricoe}>{dataFormatada}</Text>
+                                                <Text style={styles.Descricoe}>{horaFormatada}</Text>
                                             </View>
                                         </View>
                                     </View>
-                                )
+                                );
                             })
-                        }
+                        )}
                     </ScrollView>
                     <StatusBar style="auto" />
                 </View>

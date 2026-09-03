@@ -14,17 +14,19 @@ export const JussaProvider = ({ children }) => {
     const [tituloChamada, setTituloChamada] = useState("");
     const [maquinaChamada, setMaquinaChamada] = useState("");
     const [local, setLocal] = useState("");
-    const [imagem, setImagem] = useState(null); // Adicionado para suportar a foto
+    const [imagem, setImagem] = useState(null);
     const [editMode, setEditMode] = useState(false);
     const [idToEdit, setIdToEdit] = useState(null);
 
     const route = useRouter();
- const paginaMinhasOS = () => {
-    route.push("/minhasOS/")
-  }
-      const paginaCadOS = () => {
-    route.push("/cadastroServico/cadServico")
-  }
+
+    const paginaMinhasOS = () => {
+        route.push("/minhasOS/");
+    };
+
+    const paginaCadOS = () => {
+        route.push("/cadastroServico/cadServico");
+    };
 
     // 1. LISTAR ORDENS DE SERVIÇO
     const getChamada = async () => {
@@ -35,21 +37,24 @@ export const JussaProvider = ({ children }) => {
             console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
         }
     };
-const getIdChamada = async (id) => {
-    try {
-        const resposta = await api.get(`/OrdemServico/${id}`);
-        setChamadaUnica(resposta.data ? [resposta.data] : []);
-    } catch (error) {
-        console.log("Erro ao buscar chamada única:", error.response?.data || error.message);
-        setChamadaUnica([]); 
-    }
-};
-    const getNotificacao = async () => {
+
+    const getIdChamada = async (id) => {
+        try {
+            const resposta = await api.get(`/OrdemServico/${id}`);
+            setChamadaUnica(resposta.data ? [resposta.data] : []);
+        } catch (error) {
+            console.log("Erro ao buscar chamada única:", error.response?.data || error.message);
+            setChamadaUnica([]); 
+        }
+    };
+
+    const getNotificacao = async (idUsuario) => {
+        if (!idUsuario) return;
         try {
             const resposta = await api.get(`/Notificacao/${idUsuario}`);
             setlistagemNotificacao(resposta.data);
         } catch (error) {
-            console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
+            console.log("Erro ao buscar notificações:", error.response?.data || error.message);
         }
     };
 
@@ -63,7 +68,6 @@ const getIdChamada = async (id) => {
             formData.append("Descricao", descricao);
             formData.append("Equipamento", maquinaChamada || "");
 
-            // Anexa a imagem caso tenha sido selecionada pelo ImagePicker
             if (imagem) {
                 formData.append("FotoUrl", {
                     uri: imagem.uri || imagem,
@@ -71,23 +75,20 @@ const getIdChamada = async (id) => {
                     type: "image/jpeg",
                 });
             }
-
-            await api.post("/OrdemServico", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-
+await api.post("/OrdemServico", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+            transformRequest: (data) => data, // Impede que o Axios corrompa o FormData
+        });
             Alert.alert("Sucesso", "Ordem de serviço cadastrada!");
 
-            // Limpa o formulário
             setTituloChamada("");
             setMaquinaChamada("");
             setLocal("");
             setDescricao("");
             setImagem(null);
-            paginaMinhasOS()
-            // Atualiza a lista
+            paginaMinhasOS();
             await getChamada();
 
         } catch (error) {
@@ -109,7 +110,7 @@ const getIdChamada = async (id) => {
     };
 
     // 3. ATUALIZAR ORDEM DE SERVIÇO
-const putTask = async () => {
+    const putTask = async () => {
         try {
             const formData = new FormData();
             formData.append("Titulo", tituloChamada);
@@ -117,7 +118,15 @@ const putTask = async () => {
             formData.append("Descricao", descricao);
             formData.append("Equipamento", maquinaChamada || "");
             formData.append("IdStatus", statusChamada);
-            formData.append("FotoUrl", imagem);
+
+            // Garante o formato correto caso o usuário tenha selecionado uma nova imagem
+            if (imagem && typeof imagem === "object") {
+                formData.append("FotoUrl", {
+                    uri: imagem.uri || imagem,
+                    name: `os_${Date.now()}.jpg`,
+                    type: "image/jpeg",
+                });
+            }
 
             await api.put(`/OrdemServico/${idToEdit}`, formData, {
                 headers: {
@@ -138,6 +147,7 @@ const putTask = async () => {
             paginaMinhasOS();
         } catch (error) {
             console.log("Erro ao atualizar OS:", error.response?.data || error.message);
+            Alert.alert("Erro", "Não foi possível atualizar a ordem de serviço.");
         }
     };
 

@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
     },
     inputMaior: {
         height: 100,
-        textAlignVertical: "top"
+        textAlignVertical: "top",
     },
     botao: {
         marginLeft: 4,

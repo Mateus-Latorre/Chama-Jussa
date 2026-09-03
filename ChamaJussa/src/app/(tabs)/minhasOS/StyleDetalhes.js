@@ -19,8 +19,9 @@ export const styles = StyleSheet.create({
   },
   formulario: {
     width: 368,
-    height: 793,
-    boxShadow: "1px 4px 5px rgba(0, 0, 0, 0.5)",
+    paddingBottom: 25, // Substituído a altura fixa por padding inferior
+    // Sombras compatíveis com iOS e Android
+    shadowColor: "#000",
     borderRadius: 10,
     marginTop: 49,
     backgroundColor: "#fff",
@@ -85,9 +86,9 @@ export const styles = StyleSheet.create({
     marginLeft: 26,
     borderRadius: 30,
     width: 308,
-    height: 140
+    height: 140,
   },
-  btn:{
+  btn: {
     marginTop: 34,
     borderColor: "#2563EB",
     borderWidth: 1,
@@ -96,11 +97,11 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 30
+    marginBottom: 30,
   },
   txtbtn: {
     color: "#2563EB",
     fontSize: 18,
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 });
