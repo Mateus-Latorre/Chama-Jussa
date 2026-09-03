@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
         width: 107,
         height: 44,
         backgroundColor: "#007AFF",
-        borderRadius: 10,
+        borderRadius: 5,
         justifyContent: "center",
         alignItems: "center",
         marginRight: 30,
@@ -71,9 +71,9 @@ export const styles = StyleSheet.create({
     caixa: {
         backgroundColor: "#fff",
         height: 174,
-        width: "100%",
+        width: "90%",
         borderRadius: 10,
-        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
+        boxShadow: '1px 3px 5px rgba(0, 0, 0, 0.3)',
         justifyContent: "center",
         // alignItems: "center",
         flexDirection: "row",
@@ -81,12 +81,14 @@ export const styles = StyleSheet.create({
         paddingBottom: 18,
         paddingRight: 13,
         paddingLeft: 13,
-        marginBottom: 27
+        marginBottom: 27,
+        marginHorizontal:"auto"
 
     },
     scroll: {
         flex: 1,
-        borderRadius: 5
+        borderRadius: 5,
+        width:"100%"
 
     },
     tituloAzul: {
@@ -128,7 +130,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderColor: "#e0e1e3",
         borderWidth: 1,
-        height: 30
+        height: 27
 
     },
     botaoAtivo: {
@@ -150,7 +152,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         width: "100%"
     },
-    status: {
+    Aberta: {
         backgroundColor: '#DCEAFF',
         height: 27, 
         color: '#2583F7',
@@ -161,5 +163,29 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 12,
         borderRadius: 10,
 
-    }
+    },
+    Andamento: {
+        backgroundColor: '#8cce21',
+        height: 27, 
+        color: '#188d00',
+        textAlign: "center",
+        textAlignVertical: "center",
+        fontSize: 16,
+        fontWeight: '500',
+        paddingHorizontal: 12,
+        borderRadius: 10,
+
+    },
+    Finalizado: {
+        backgroundColor: '#ce5821',
+        height: 27, 
+        color: '#8d2d00',
+        textAlign: "center",
+        textAlignVertical: "center",
+        fontSize: 16,
+        fontWeight: '500',
+        paddingHorizontal: 12,
+        borderRadius: 10,
+
+    },
 });

@@ -4,10 +4,12 @@ import { TouchableOpacity, Text, View, TextInput } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './StyleCadServico';
 import { jussaContext, JussaProvider } from '../../../Context/jussaContext';
-import { useContext } from 'react';
+import {useState, useContext } from 'react';
+import ImagePicker from 'expo-image-picker'
 
 function App() {
-    const { postChamada, descricao, setDescricao, local, setLocal, tituloChamada, maquinaChamada, setMaquinaChamada, setTituloChamada, putChamada, editMode, setEditMode} = useContext(jussaContext)
+
+    const { imagem, setImagem,postChamada, descricao, setDescricao, local, setLocal, tituloChamada, maquinaChamada, setMaquinaChamada, setTituloChamada, putChamada, editMode, setEditMode} = useContext(jussaContext)
 
     return (
         <SafeAreaProvider>

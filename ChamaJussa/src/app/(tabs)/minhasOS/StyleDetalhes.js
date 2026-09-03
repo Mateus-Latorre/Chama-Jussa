@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   formulario: {
     width: 368,
     height: 793,
-    boxShadow: "1px 4px 5px rgba(0, 0, 0, 0.5)",
+        boxShadow: '1px 3px 5px rgba(0, 0, 0, 0.3)',
     borderRadius: 10,
     marginTop: 49,
     backgroundColor: "#fff",

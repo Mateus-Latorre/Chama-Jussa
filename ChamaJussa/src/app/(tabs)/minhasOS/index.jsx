@@ -29,24 +29,24 @@ export default function App() {
   useEffect(() => {
     getChamada();
   }, []);
-const chamadasFiltradas = listagemChamadas.filter((chamada) => {
-  // Captura o ID do usuário considerando a claim do ASP.NET
-  const idLogado = 
-    usuario?.idUsuario || 
-    usuario?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] || 
-    usuario?.jti;
+  const chamadasFiltradas = listagemChamadas.filter((chamada) => {
+    // Captura o ID do usuário considerando a claim do ASP.NET
+    const idLogado =
+      usuario?.idUsuario ||
+      usuario?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] ||
+      usuario?.jti;
 
-  // 1. Garante que só exibe as OSs criadas pelo usuário logado
-  const pertenceAoUsuario = 
-    String(chamada?.idUsuario).trim().toLowerCase() === String(idLogado).trim().toLowerCase();
+    // 1. Garante que só exibe as OSs criadas pelo usuário logado
+    const pertenceAoUsuario =
+      String(chamada?.idUsuario).trim().toLowerCase() === String(idLogado).trim().toLowerCase();
 
-  if (!pertenceAoUsuario) return false;
+    if (!pertenceAoUsuario) return false;
 
-  // 2. Filtro dos botões
-  if (selecionado === "Todos") return true;
+    // 2. Filtro dos botões
+    if (selecionado === "Todos") return true;
 
-  return (chamada?.idStatus || "").toString().trim().toLowerCase() === selecionado.toLowerCase();
-});
+    return (chamada?.idStatus || "").toString().trim().toLowerCase() === selecionado.toLowerCase();
+  });
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.safeArea}>
@@ -156,12 +156,12 @@ const chamadasFiltradas = listagemChamadas.filter((chamada) => {
                   onPress={paginaDetalhes}
                 >
                   <View style={styles.Textos}>
+                    <View style={styles.status}>
 
-                                        <View style={styles.status}>
-                                            <Text style={styles.tituloAzul}>OS - 001</Text>
+                      <Text style={styles.tituloAzul}>OS - 001</Text>
 
-                                            <Text style={styles.textoStatus}>Aberta</Text>
-                                        </View>
+                      <Text style={styles.status}>  {chamada.idStatus}</Text>
+                    </View>
 
                     <Text style={styles.tituloSub}>{chamada.titulo}</Text>
                     <View style={styles.Data}>
