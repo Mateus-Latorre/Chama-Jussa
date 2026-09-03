@@ -8,6 +8,7 @@ export const jussaContext = createContext();
 export const JussaProvider = ({ children }) => {
     const [listagemChamadas, setListagemChamadas] = useState([]);
     const [chamadaUnica, setChamadaUnica] = useState([]);
+    const [listagemNotificacao, setlistagemNotificacao] = useState([]);
     const [descricao, setDescricao] = useState("");
     const [statusChamada, setStatusChamada] = useState("");
     const [tituloChamada, setTituloChamada] = useState("");
@@ -18,9 +19,13 @@ export const JussaProvider = ({ children }) => {
     const [idToEdit, setIdToEdit] = useState(null);
 
     const route = useRouter();
+ const paginaMinhasOS = () => {
+    route.push("/minhasOS/")
+  }
       const paginaCadOS = () => {
     route.push("/cadastroServico/cadServico")
   }
+
     // 1. LISTAR ORDENS DE SERVIÇO
     const getChamada = async () => {
         try {
@@ -39,6 +44,14 @@ const getIdChamada = async (id) => {
         setChamadaUnica([]); 
     }
 };
+    const getNotificacao = async () => {
+        try {
+            const resposta = await api.get(`/Notificacao/${idUsuario}`);
+            setlistagemNotificacao(resposta.data);
+        } catch (error) {
+            console.log("Erro ao buscar chamadas:", error.response?.data || error.message);
+        }
+    };
 
     // 2. CRIAR ORDEM DE SERVIÇO
     const postChamada = async () => {
@@ -73,7 +86,7 @@ const getIdChamada = async (id) => {
             setLocal("");
             setDescricao("");
             setImagem(null);
-
+            paginaMinhasOS()
             // Atualiza a lista
             await getChamada();
 
@@ -96,7 +109,7 @@ const getIdChamada = async (id) => {
     };
 
     // 3. ATUALIZAR ORDEM DE SERVIÇO
-    const putTask = async () => {
+const putTask = async () => {
         try {
             const formData = new FormData();
             formData.append("Titulo", tituloChamada);
@@ -122,6 +135,7 @@ const getIdChamada = async (id) => {
             setDescricao("");
             setStatusChamada("");
             setImagem(null);
+            paginaMinhasOS();
         } catch (error) {
             console.log("Erro ao atualizar OS:", error.response?.data || error.message);
         }
@@ -157,13 +171,18 @@ const getIdChamada = async (id) => {
             idToEdit, 
             setIdToEdit, 
             getChamada,
+            getNotificacao,
+            listagemNotificacao,
             postChamada,
             putTask,
             deleteTask,
             paginaCadOS,
             editChamada,
             getIdChamada,
-            chamadaUnica
+            chamadaUnica,
+            statusChamada,
+            setStatusChamada,
+            paginaMinhasOS
         }}>
             {children}
         </jussaContext.Provider>
